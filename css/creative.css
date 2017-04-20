@@ -45,6 +45,12 @@ p {
 .bg-primary {
   background-color: #337ab7;
 }
+
+.bg-cloud {
+  background-color: #dbe0e0;
+  color: white;
+}
+
 .bg-dark {
   background-color: #222222;
   color: white;
@@ -155,7 +161,8 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/header.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../img/header.jpg');
+/*  background-image: url('../img/header.jpg');*/
   text-align: center;
   color: white;
 }
@@ -414,3 +421,18 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+#footer {
+  background-color: #131313;
+  color: #dbdbdb;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#footer a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
