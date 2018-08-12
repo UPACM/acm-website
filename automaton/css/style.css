@@ -54,6 +54,7 @@ canvas{
   display:block;
   vertical-align:bottom;
   position: fixed;
+  filter: blur(0.25px);
 }
 
 
