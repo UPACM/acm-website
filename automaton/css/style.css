@@ -36,6 +36,11 @@
 
 html{
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   background-color: #151617;
+}
+
+body{
+  transition: .75s;
 }
 
 
@@ -80,4 +85,9 @@ canvas{
   letter-spacing: 0.1rem;
   margin-top: 1em;
   font-weight: bold;
+}
+
+
+.onload{
+  opacity: 0;
 }

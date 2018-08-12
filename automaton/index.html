@@ -7,10 +7,10 @@
     	<link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
     	<link rel="stylesheet" media="screen" href="css/style.css">
 	</head>
-	<body>
+	<body class="onload">
 		<div class="site-container">
 			<div id="particles-js">
-				<div class="h-100 d-flex flex-wrap w-100 position-absolute" style="z-index: 10">
+				<div class="h-100 d-flex flex-wrap w-100 position-absolute" style="z-index: 10;">
 					<div class="container my-auto text-center">
 						<img src="../img/up_acm_logo.png" class="acm-logo">
 					</div>
@@ -27,6 +27,12 @@
 	    <!-- Particles JS -->
 	    <script src="particles.js"></script>
 	    <script src="js/app.js"></script>
+
+	    <script>
+	    	$( document ).ready(function() {
+			    $("body").removeClass("onload");
+			});
+	    </script>
 
 	</body>
 </html>
