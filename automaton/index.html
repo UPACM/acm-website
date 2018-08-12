@@ -2,20 +2,31 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
     	<link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+    	<link rel="stylesheet" media="screen" href="css/style.css">
 	</head>
 	<body>
-		<div class="h-100 d-flex flex-wrap text-center">
-			<img src="../img/up_acm_logo.png" class="my-auto" style="max-height: 500px">
+		<div class="site-container">
+			<div id="particles-js">
+				<div class="h-100 d-flex flex-wrap w-100 position-absolute" style="z-index: 10">
+					<div class="container my-auto text-center">
+						<img src="../img/up_acm_logo.png" class="acm-logo">
+					</div>
+				</div>
+			</div>
 		</div>
-
+		
 		<!-- jQuery -->
-    	<script src="../vendor/jquery/jquery.min.js"></script>
+    	<script src="js/jquery-3.3.1.min.js"></script>
 
 	    <!-- Bootstrap Core JavaScript -->
-	    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+
+	    <!-- Particles JS -->
+	    <script src="particles.js"></script>
+	    <script src="js/app.js"></script>
 
 	</body>
 </html>
