@@ -126,6 +126,8 @@ particlesJS('particles-js',
 
 );
 
+
+/*
 particlesJS('particles-js-triangle',
   
   {
@@ -240,3 +242,5 @@ particlesJS('particles-js-triangle',
 }
 
 );
+
+*/
