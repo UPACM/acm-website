@@ -60,6 +60,10 @@ canvas{
   vertical-align:bottom;
   position: fixed;
   filter: blur(0.25px);
+  width: 110% !important;
+  height: 110% !important;
+  top: -5%;
+  left: -5%;
 }
 
 
