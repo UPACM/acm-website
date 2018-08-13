@@ -60,11 +60,14 @@ canvas{
   vertical-align:bottom;
   position: fixed;
   filter: blur(0.25px);
+<<<<<<< HEAD
   width: 110% !important;
   height: 110% !important;
   top: -5%;
   left: -5%;
   overflow: visible;
+=======
+>>>>>>> parent of 1920cdd... expanded particle canvas
 }
 
 
