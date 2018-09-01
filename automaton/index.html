@@ -35,7 +35,7 @@
 			    $("body").removeClass("onload");
 
 			    setInterval(function(){ 
-			    	if($(".page-controls__page-numbers").html() != "undefined"){
+			    	if($(".page-controls__page-numbers").html() != null){
 						alert($(".page-controls__page-numbers").html()); 
 			    	}
 				}, 3000);
