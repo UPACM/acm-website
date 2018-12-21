@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,10 +16,12 @@
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 	    <!-- Custom Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	   
 
 	    <!-- Plugin CSS -->
-	  
+	  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 	    <!-- Theme CSS -->
 	    <link href="css/creative.css" rel="stylesheet">
@@ -29,13 +32,255 @@
 	    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
 
 	  
+	  	<style>
+	  		*{
+	  			font-family: 'Open Sans', sans-serif;
+	  			-webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			    text-rendering: optimizeLegibility;
+	  		}
+
+	  		a{
+	  			color: #0083c0;
+	  			font-weight: 500;
+	  		}
+	  		.site-container{
+	  			height: 100vh;
+	  		}
+
+	  		.btn{
+	  			border-radius: 40px;
+	  		}
+
+	  		.btn-secondary{
+	  			background-color: white;
+	  			border-color: white;
+	  			color: #0083c0;
+	  		}
+
+	  		.btn-secondary:hover{
+	  			background-color: transparent;
+	  			border-color: white;
+	  			color: white;
+	  		}
+
+	  		.card-title{
+	  			color: #0083c0;
+	  			font-family: 'Montserrat', 'Open Sans', sans-serif;
+	  			font-weight: 700;
+	  		}
+
+	  		.card-text{
+	  			color: #212121
+	  		}
+
+	  		.events .card-text{
+	  			font-size: 0.8em
+	  		}
+
+	  		.events p{
+	  			margin: 0;
+	  		}
+
+	  		.footer a{
+	  			color: white;
+	  		}
+
+	  		.footer{
+	  			font-size: 0.8em;
+	  		}
+
+	  		.footer p{
+	  			margin: 0.65em 0
+	  		}
+
+	  		.social-media-button{
+	  			border-radius: 100%;
+	  			background-color: white;
+	  			color: #0083c0 !important;
+	  			padding: 3px;
+	  			transition: 0.15s;
+	  			border: 1px solid white;
+	  			width: 35px;
+	  			height: 35px;
+	  			text-align: center;
+	  			display: flex;
+	  			
+	  		}
+
+	  		.social-media-button:hover{
+	  			background-color: transparent;
+	  			color: white !important;
+	  			text-decoration: none;
+	  		}
+	  	</style>
 	</head>
 
 	<body>
-		UP ACM TEST
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		<div class="site-container">
+			<nav class="w-100 position-fixed" style="z-index: 10000; top: 0">
+				<div class="p-3" style="background-color: white">
+					<div class="container">
+						<div class="row d-flex">
+							<div class="col-2 order-lg-2 text-center">
+								<img src="files/logo.png" width="80px">
+							</div>
+
+							<div class="col-5 order-lg-1 d-none d-md-flex">
+								<a class="m-auto" href="#">Events</a>
+								<a class="m-auto" href="#">Committees</a>
+							</div>
+
+							<div class="col-5 order-lg-3 d-none d-md-flex">
+								<a class="m-auto" href="#">About Us</a>
+								<a class="m-auto" href="#">Contact</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<div class="header text-center" style="background-color: black; color: white; overflow: hidden; height: 600px; margin-top: 76px">
+
+				<div class="position-absolute d-flex" style="background-color: #0083c0d2; z-index: 4; height: inherit; width: 100%;">
+					<div class="container my-auto d-flex flex-column">
+						<h1 style="font-size: 3em; font-weight: bold">Building communities to develop the future.</h1>
+						<p class="my-4">We envision a world where computing stands at the forefront of development - where we are able to use our skills to address the problems of tomorrow and create a positive impact on the community at large.</p>
+
+						<button type="button" class="btn btn-secondary w-25 mx-auto" >Learn more <i class="fas fa-arrow-right"></i></button>
+					</div>
+				</div>
+				<video autoplay muted loop id="acm-header" style="min-width: 100%; min-height: 100%; bottom: 20%; position: relative;">
+				  <source src="files/video/header.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+
+			<div class="w-100 p-5 events" style="background-color: #231f20; color: white; min-height: 600px">
+				<div class="container d-flex flex-column text-center">
+					<h1 class="mx-auto my-3" style="font-weight: bold">EVENTS</h1>
+
+					<span>Lorem ipsum description</span>
+					<div class="card-deck my-3 text-left">
+					  <div class="card">
+					  	<div class="text-center" style="height: 150px; overflow: hidden;">
+					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/25550092_1840303599315461_3727894972288682290_n.png?_nc_cat=103&_nc_ht=scontent.fceb1-1.fna&oh=3537f3c703bd20d1be7f1c1ddf014d5d&oe=5CD7FDBB" alt="Algolympics">
+						</div>
+					    <div class="card-body">
+					   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
+					      <h5 class="card-title">Algolympics</h5>
+					      <p class="card-text">Form a team of three and race past your rivals in Algolympics, an intercollegiate programming competition open to all interested schools, colleges, and universities!</p>
+					      
+					    </div>
+					  </div>
+
+					  <div class="card">
+					  	<div class="text-center" style="height: 150px; overflow: hidden;">
+					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/31817406_1986574731355013_5310186149027774464_n.jpg?_nc_cat=110&_nc_ht=scontent.fceb1-1.fna&oh=2709cf724ce5bee2a1f9c6aabc07d4b0&oe=5C919825" alt="Haxxor">
+						</div>
+					    <div class="card-body">
+					   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
+					      <h5 class="card-title">Haxxor</h5>
+					      <p class="card-text">A whole day event aiming to raise awareness and increase interest in computer security as a research field. There are talks about computer security and a capture the flag competition to apply what they've learned.</p>
+					      
+					    </div>
+					  </div>
+
+					  <div class="card">
+					  	<div class="text-center" style="height: 150px; overflow: hidden;">
+					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/42304061_2186626874683130_2294782145576566784_n.png?_nc_cat=100&_nc_ht=scontent.fceb1-1.fna&oh=299ab95df449278baf6b46ee09763d65&oe=5CD90E6D" alt="Scratch Code Camps">
+						</div>
+					    <div class="card-body">
+					   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
+					      <h5 class="card-title">Scratch Code Camps</h5>
+					      <p class="card-text">A lecture series for elementary students that will introduce them to basic programming concepts using the Scratch programming language.</p>
+					      
+					    </div>
+					  </div>
+					  <div class="card">
+					  	<div class="text-center" style="height: 150px; overflow: hidden;">
+					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/36246637_2052271088118710_4735618253236207616_n.jpg?_nc_cat=102&_nc_ht=scontent.fceb1-1.fna&oh=060af2922f4301d81290ace2edde0718&oe=5CA1A854" alt="Easy As Py">
+						</div>
+					    <div class="card-body">
+					   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
+					      <h5 class="card-title">Easy as Py</h5>
+					      <p class="card-text">It introduces Grade 9 and Grade 10 students to basic programming concepts in hopes of creating an appreciation for Computer Science and for them to consider it as a potential career path. </p>
+					      
+					    </div>
+					  </div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="w-100 p-5 social" style="background-color: white; min-height: 600px">
+				<div class="container d-flex flex-column">
+					<h1 class="mx-auto my-3" style="font-weight: bold; color: #0083c0">SOCIAL NEWS</h1>
+
+					<div class="row">
+						<div class="col-md-6">
+							<a class="twitter-timeline" href="https://twitter.com/upacm?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="4">Tweets by upacm</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+						<div class="col-md-6">
+							<div class="fb-page" data-href="https://www.facebook.com/upacm/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/upacm/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/upacm/">Association for Computing Machinery - UP Diliman Student Chapter, Inc.</a></blockquote></div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
+			<div class="w-100 footer" style="background-color: #0083c0; color: white; min-height: 250px">
+				<div class="container p-5">
+					<div class="row">
+						<div class="col-lg-4 d-flex flex-column">
+							<h3 class="h3 mb-4"><strong>UP ACM</strong></h3>
 
+							<a href="#">About</a>
+							<a href="#">Events</a>
+							<a href="#">Committees</a>
+							<a href="#">Partners</a>
+							<a href="http://upacm.net/automaton">Automaton</a>
+						</div>
+						<div class="col-lg-4">
+							<h3 class="h3 mb-4"><strong>Contact Us</strong></h3>
+
+							<p><i class="fas fa-envelope"></i> <span>council@upacmnet</span></p>
+
+							<p><i class="fas fa-mobile-alt"></i> <span>+63 926 360 4616</span></p>
+
+							<p><i class="fas fa-map-marker"></i>
+							Department of Computer Science, University of the Philippines Diliman,  Quezon City, Philippines </p>
+						</div>
+						<div class="col-lg-4">
+							<h3 class="h3 mb-4"><strong>Connect with Us!</strong></h3>
+
+							<div class="d-flex">
+								<a href="https://www.facebook.com/upacm" class="social-media-button"><i class="m-auto fab fa-facebook-f"></i></a>
+								<a href="https://www.twitter.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-twitter"></i></a>
+								<a href="https://www.linkedin.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-linkedin-in"></i></a>
+								<a href="https://www.linkedin.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-youtube"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="copyright w-100 p-4" style="background-color: #003f76;">
+					<div class="container text-center">
+						© 2018 - Association for Computing Machinery University of the Philippines Diliman Student Chapter Inc.
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	    <!-- jQuery -->
 	  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
