@@ -24,8 +24,7 @@
 	  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 	    <!-- Theme CSS -->
-	    <link href="css/creative.css" rel="stylesheet">
-	    <link href="css/stylesheet.css" rel="stylesheet">
+	    
 
 	    <!-- Favicon -->
 	    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
@@ -275,7 +274,7 @@
 				</div>
 
 				<div class="copyright w-100 p-4" style="background-color: #003f76;">
-					<div class="container text-center>
+					<div class="container text-center">
 						© 2018 - Association for Computing Machinery University of the Philippines Diliman Student Chapter Inc.
 					</div>
 				</div>
@@ -292,7 +291,7 @@
 
 		<script>
 			$(function() {
-			  $("#acm-header source").each(function() {
+			  $("video#acm-header source").each(function() {
 			    var sourceFile = $(this).attr("data-src");
 			    $(this).attr("src", sourceFile);
 			    var video = this.parentElement;
