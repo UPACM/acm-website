@@ -145,7 +145,7 @@
 				</div>
 			</nav>
 
-			<div class="header text-center" style="background-color: black; color: white; overflow: hidden; height: 600px; margin-top: 32px">
+			<div class="header text-center" style="background-color: black; color: white; overflow: hidden; height: 480px; margin-top: 79px">
 
 				<div class="position-absolute d-flex" style="z-index: 4; height: inherit; width: 100%;">
 					<div class="container my-auto d-flex flex-column">
@@ -160,7 +160,7 @@
 				</div>
 
 				<video autoplay muted loop id="acm-header" style="min-width: 100%; min-height: 100%; bottom: 20%; position: relative;">
-				  <source src="files/video/header.mp4" type="video/mp4">
+				  <source data-src="files/video/header.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
 			</div>
@@ -265,17 +265,17 @@
 							<h3 class="h3 mb-4"><strong>Connect with Us!</strong></h3>
 
 							<div class="d-flex">
-								<a href="https://www.facebook.com/upacm" class="social-media-button"><i class="m-auto fab fa-facebook-f"></i></a>
-								<a href="https://www.twitter.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-twitter"></i></a>
-								<a href="https://www.linkedin.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-linkedin-in"></i></a>
-								<a href="https://www.linkedin.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-youtube"></i></a>
+								<a href="https://www.facebook.com/upacm/" class="social-media-button"><i class="m-auto fab fa-facebook-f"></i></a>
+								<a href="https://twitter.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-twitter"></i></a>
+								<a href="https: ph.linkedin.com/company/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-linkedin-in"></i></a>
+								<a href="https://www.youtube.com/user/upacmYT" class="social-media-button ml-2"><i class="m-auto fab fa-youtube"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="copyright w-100 p-4" style="background-color: #003f76;">
-					<div class="container text-center">
+					<div class="container text-center>
 						© 2018 - Association for Computing Machinery University of the Philippines Diliman Student Chapter Inc.
 					</div>
 				</div>
@@ -289,5 +289,17 @@
 	    
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<script>
+			$(function() {
+			  $("#acm-header source").each(function() {
+			    var sourceFile = $(this).attr("data-src");
+			    $(this).attr("src", sourceFile);
+			    var video = this.parentElement;
+			    video.load();
+			    video.play();
+			  });
+			});
+		</script>
 	</body>
 </html>
