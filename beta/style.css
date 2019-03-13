@@ -1,0 +1,133 @@
+	*{
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+	}
+
+	a{
+		color: #0083c0;
+		font-weight: 500;
+	}
+	.site-container{
+		height: 100vh;
+	}
+
+	.btn{
+		border-radius: 40px;
+	}
+
+	.btn-secondary{
+		background-color: white;
+		border-color: white;
+		color: #0083c0;
+	}
+
+	.btn-secondary:hover{
+		background-color: transparent;
+		border-color: white;
+		color: white;
+	}
+
+	.card-title{
+		color: #0083c0;
+		font-family: 'Montserrat', 'Open Sans', sans-serif;
+		font-weight: 700;
+	}
+
+	.card-text{
+		color: #212121
+	}
+
+	.events .card-text{
+		font-size: 0.8em
+	}
+
+	.events p{
+		margin: 0;
+	}
+
+	.footer a{
+		color: white;
+	}
+
+	.footer{
+		font-size: 0.85em;
+	}
+
+	.footer p{
+		margin: 0.65em 0
+	}
+
+	.social-media-button{
+		border-radius: 100%;
+		background-color: white;
+		color: #0083c0 !important;
+		padding: 3px;
+		transition: 0.15s;
+		border: 1px solid white;
+		width: 35px;
+		height: 35px;
+		text-align: center;
+		display: flex;
+		
+	}
+
+	.social-media-button:hover{
+		background-color: transparent;
+		color: white !important;
+		text-decoration: none;
+	}
+
+	.acm-navbar{
+		z-index: 10000;
+		top: 0;	
+	}
+
+	.acm-navbar .bg{
+		background-color: white;
+	}
+
+	.landing-title{
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	.landing-subtitle{
+		font-size: 1.31rem;
+	}
+
+	.header{
+		background-color: black;
+		color: white;
+		overflow: hidden;
+		height: 480px;
+		/*height: 90vh;*/
+		margin-top: 79px;
+	}
+
+	.header-bg{
+		height: inherit; width: 100%;
+	}
+
+	.landing-scroll-down{
+		width: 15rem;
+	}
+
+	.blueoverlay{
+		background-color: #0083c0;
+		opacity: 0.82;
+		z-index: 2;
+	}
+
+	.landing-image{
+		z-index: 1;
+	}
+
+	.landing-video{
+		min-width: 100%;
+		min-height: 100%;
+		bottom: 20%;
+		position: relative;
+	}
+	

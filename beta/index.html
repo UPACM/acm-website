@@ -19,12 +19,11 @@
 	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	   
-
 	    <!-- Plugin CSS -->
 	  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 	    <!-- Theme CSS -->
-	    
+	    <link rel="stylesheet" href="style.css">
 
 	    <!-- Favicon -->
 	    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
@@ -32,86 +31,7 @@
 
 	  
 	  	<style>
-	  		*{
-	  			font-family: 'Open Sans', sans-serif;
-	  			-webkit-font-smoothing: antialiased;
-			    -moz-osx-font-smoothing: grayscale;
-			    text-rendering: optimizeLegibility;
-	  		}
-
-	  		a{
-	  			color: #0083c0;
-	  			font-weight: 500;
-	  		}
-	  		.site-container{
-	  			height: 100vh;
-	  		}
-
-	  		.btn{
-	  			border-radius: 40px;
-	  		}
-
-	  		.btn-secondary{
-	  			background-color: white;
-	  			border-color: white;
-	  			color: #0083c0;
-	  		}
-
-	  		.btn-secondary:hover{
-	  			background-color: transparent;
-	  			border-color: white;
-	  			color: white;
-	  		}
-
-	  		.card-title{
-	  			color: #0083c0;
-	  			font-family: 'Montserrat', 'Open Sans', sans-serif;
-	  			font-weight: 700;
-	  		}
-
-	  		.card-text{
-	  			color: #212121
-	  		}
-
-	  		.events .card-text{
-	  			font-size: 0.8em
-	  		}
-
-	  		.events p{
-	  			margin: 0;
-	  		}
-
-	  		.footer a{
-	  			color: white;
-	  		}
-
-	  		.footer{
-	  			font-size: 0.85em;
-	  		}
-
-	  		.footer p{
-	  			margin: 0.65em 0
-	  		}
-
-	  		.social-media-button{
-	  			border-radius: 100%;
-	  			background-color: white;
-	  			color: #0083c0 !important;
-	  			padding: 3px;
-	  			transition: 0.15s;
-	  			border: 1px solid white;
-	  			width: 35px;
-	  			height: 35px;
-	  			text-align: center;
-	  			display: flex;
-	  			
-	  		}
-
-	  		.social-media-button:hover{
-	  			background-color: transparent;
-	  			color: white !important;
-	  			text-decoration: none;
-	  		}
+	  		
 	  	</style>
 	</head>
 
@@ -126,39 +46,41 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 		<div class="site-container">
-			<nav class="w-100 position-fixed" style="z-index: 10000; top: 0">
-				<div class="p-3" style="background-color: white">
+			<nav class="w-100 position-fixed acm-navbar">
+				<div class="p-3 bg">
 					<div class="container">
 						<div class="row d-flex">
 							<a href="./index">
 							<img src="files/logo_long.png" height="48px"></a>
 
 							<span class="ml-auto d-none d-md-flex" >
-								<a class="mr-3 my-auto" href="./about">About Us</a>
-								<a class="mr-3 my-auto" href="./committees">Committees</a>
-								<a class="my-auto" href="#">Contact</a>
+								<a class="mr-3 my-auto nav-about" href="./about">About Us</a>
+								<a class="mr-3 my-auto nav-committees" href="./committees">Committees</a>
+								<a class="my-auto nav-contact" href="#">Contact</a>
 							</span>
 						</div>
 					</div>
 				</div>
 			</nav>
 
-			<div class="header text-center" style="background-color: black; color: white; overflow: hidden; height: 480px; margin-top: 79px">
+			<div class="header text-center">
 
-				<div class="position-absolute d-flex" style="z-index: 4; height: inherit; width: 100%;">
-					<div class="container my-auto d-flex flex-column">
-						<h1 style="font-size: 3em; font-weight: bold">Building communities to develop the future.</h1>
-						<p class="my-4" style="font-size: 1.31em">We envision a world where computing stands at the forefront of development - where we are able to use our skills to address the problems of tomorrow and create a positive impact on the community at large.</p>
-
-						<button type="button" class="btn btn-secondary w-25 mx-auto" >Learn more <i class="fas fa-arrow-right"></i></button>
+				<div class="position-absolute d-flex flex-column header-bg" style="z-index: 4; height: inherit; width: 100%;">
+					<div class="container mt-auto d-flex flex-column">
+						<h1 class="landing-title"></h1>
+						<p class="my-4 landing-subtitle"></p>
 					</div>
+
+					<button type="button" class="btn btn-secondary mx-auto landing-scroll-down mt-auto mb-5" >Learn more <i class="py-2 px-1 fas fa-arrow-down"></i></button>
 				</div>
 
-				<div class="position-absolute" style="background-color: #0083c0; opacity: 0.82; z-index: 2; height: inherit; width: 100%;">
+				<div class="position-absolute d-flex flex-column header-bg blueoverlay">
+				</div>
+				<div class="position-absolute d-flex flex-column header-bg landing-image">
 				</div>
 
-				<video autoplay muted loop id="acm-header" style="min-width: 100%; min-height: 100%; bottom: 20%; position: relative;">
-				  <source data-src="files/video/header.mp4" type="video/mp4">
+				<video autoplay muted loop id="acm-header" class="landing-video">
+				  <source type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
 			</div>
@@ -167,57 +89,58 @@
 				<div class="container d-flex flex-column text-center">
 					<h1 class="mx-auto my-3" style="font-weight: bold">EVENTS</h1>
 
-					<span>Lorem ipsum description</span>
-					<div class="card-deck my-3 text-left">
-					  <div class="card">
-					  	<div class="text-center" style="height: 150px; overflow: hidden;">
-					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/25550092_1840303599315461_3727894972288682290_n.png?_nc_cat=103&_nc_ht=scontent.fceb1-1.fna&oh=3537f3c703bd20d1be7f1c1ddf014d5d&oe=5CD7FDBB" alt="Algolympics">
-						</div>
-					    <div class="card-body">
-					   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
-					      <h5 class="card-title">Algolympics</h5>
-					      <p class="card-text">Form a team of three and race past your rivals in Algolympics, an intercollegiate programming competition open to all interested schools, colleges, and universities!</p>
-					      
-					    </div>
-					  </div>
+					<span class="events-description"></span>
 
-					  <div class="card">
-					  	<div class="text-center" style="height: 150px; overflow: hidden;">
-					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/31817406_1986574731355013_5310186149027774464_n.jpg?_nc_cat=110&_nc_ht=scontent.fceb1-1.fna&oh=2709cf724ce5bee2a1f9c6aabc07d4b0&oe=5C919825" alt="Haxxor">
-						</div>
-					    <div class="card-body">
-					   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
-					      <h5 class="card-title">Haxxor</h5>
-					      <p class="card-text">A whole day event aiming to raise awareness and increase interest in computer security as a research field. There are talks about computer security and a capture the flag competition to apply what they've learned.</p>
-					      
-					    </div>
-					  </div>
+					<div class="events-cards">
+						<div class="card-deck my-3 text-left">
+						  <div class="card">
+						  	<div class="text-center" style="height: 150px; overflow: hidden;">
+						    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/25550092_1840303599315461_3727894972288682290_n.png?_nc_cat=103&_nc_ht=scontent.fceb1-1.fna&oh=3537f3c703bd20d1be7f1c1ddf014d5d&oe=5CD7FDBB" alt="Algolympics">
+							</div>
+						    <div class="card-body">
+						   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
+						      <h5 class="card-title">Algolympics</h5>
+						      <p class="card-text">Form a team of three and race past your rivals in Algolympics, an intercollegiate programming competition open to all interested schools, colleges, and universities!</p>
+						      
+						    </div>
+						  </div>
 
-					  <div class="card">
-					  	<div class="text-center" style="height: 150px; overflow: hidden;">
-					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/42304061_2186626874683130_2294782145576566784_n.png?_nc_cat=100&_nc_ht=scontent.fceb1-1.fna&oh=299ab95df449278baf6b46ee09763d65&oe=5CD90E6D" alt="Scratch Code Camps">
+						  <div class="card">
+						  	<div class="text-center" style="height: 150px; overflow: hidden;">
+						    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/31817406_1986574731355013_5310186149027774464_n.jpg?_nc_cat=110&_nc_ht=scontent.fceb1-1.fna&oh=2709cf724ce5bee2a1f9c6aabc07d4b0&oe=5C919825" alt="Haxxor">
+							</div>
+						    <div class="card-body">
+						   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
+						      <h5 class="card-title">Haxxor</h5>
+						      <p class="card-text">A whole day event aiming to raise awareness and increase interest in computer security as a research field. There are talks about computer security and a capture the flag competition to apply what they've learned.</p>
+						      
+						    </div>
+						  </div>
+
+						  <div class="card">
+						  	<div class="text-center" style="height: 150px; overflow: hidden;">
+						    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/42304061_2186626874683130_2294782145576566784_n.png?_nc_cat=100&_nc_ht=scontent.fceb1-1.fna&oh=299ab95df449278baf6b46ee09763d65&oe=5CD90E6D" alt="Scratch Code Camps">
+							</div>
+						    <div class="card-body">
+						   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
+						      <h5 class="card-title">Scratch Code Camps</h5>
+						      <p class="card-text">A lecture series for elementary students that will introduce them to basic programming concepts using the Scratch programming language.</p>
+						      
+						    </div>
+						  </div>
+						  <div class="card">
+						  	<div class="text-center" style="height: 150px; overflow: hidden;">
+						    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/36246637_2052271088118710_4735618253236207616_n.jpg?_nc_cat=102&_nc_ht=scontent.fceb1-1.fna&oh=060af2922f4301d81290ace2edde0718&oe=5CA1A854" alt="Easy As Py">
+							</div>
+						    <div class="card-body">
+						   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
+						      <h5 class="card-title">Easy as Py</h5>
+						      <p class="card-text">It introduces Grade 9 and Grade 10 students to basic programming concepts in hopes of creating an appreciation for Computer Science and for them to consider it as a potential career path. </p>
+						      
+						    </div>
+						  </div>
 						</div>
-					    <div class="card-body">
-					   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
-					      <h5 class="card-title">Scratch Code Camps</h5>
-					      <p class="card-text">A lecture series for elementary students that will introduce them to basic programming concepts using the Scratch programming language.</p>
-					      
-					    </div>
-					  </div>
-					  <div class="card">
-					  	<div class="text-center" style="height: 150px; overflow: hidden;">
-					    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/36246637_2052271088118710_4735618253236207616_n.jpg?_nc_cat=102&_nc_ht=scontent.fceb1-1.fna&oh=060af2922f4301d81290ace2edde0718&oe=5CA1A854" alt="Easy As Py">
-						</div>
-					    <div class="card-body">
-					   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
-					      <h5 class="card-title">Easy as Py</h5>
-					      <p class="card-text">It introduces Grade 9 and Grade 10 students to basic programming concepts in hopes of creating an appreciation for Computer Science and for them to consider it as a potential career path. </p>
-					      
-					    </div>
-					  </div>
 					</div>
-
-					<button type="button" class="btn btn-secondary w-25 mx-auto mt-3">Learn more <i class="fas fa-arrow-right"></i></button>
 				</div>
 			</div>
 
@@ -226,10 +149,10 @@
 					<h1 class="mx-auto my-3" style="font-weight: bold; color: #0083c0">SOCIAL NEWS</h1>
 
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-6 soc-twitter">
 							<a class="twitter-timeline" href="https://twitter.com/upacm?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="4">Tweets by upacm</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 						</div>
-						<div class="col-md-6 d-flex">
+						<div class="col-md-6 d-flex soc-fb">
 							<div class="fb-page mx-auto" data-href="https://www.facebook.com/upacm/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/upacm/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/upacm/">Association for Computing Machinery - UP Diliman Student Chapter, Inc.</a></blockquote></div>
 						</div>
 					</div>
@@ -281,23 +204,20 @@
 		</div>
 		
 	    <!-- jQuery -->
-	  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  	<script src="../vendor/jquery/jquery.js"></script>
+
+
+	  	<!-- Database -->
+	  	<script src="./acm-website-db.js"></script>
 
 	    <!-- Bootstrap Core JavaScript -->
 	    
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
 
 		<script>
-			$(function() {
-			  $("video#acm-header source").each(function() {
-			    var sourceFile = $(this).attr("data-src");
-			    $(this).attr("src", sourceFile);
-			    var video = this.parentElement;
-			    video.load();
-			    video.play();
-			  });
-			});
+			
 		</script>
 	</body>
 </html>
