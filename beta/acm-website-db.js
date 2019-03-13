@@ -92,6 +92,15 @@
               $(".soc-twitter").remove();
             }
           }
+          else if (json.records[i].Configuration == "Contact Us E-mail"){
+            $(".footer-mail").html(json.records[i].Setting);
+          }
+          else if (json.records[i].Configuration == "Contact Us Mobile"){
+            $(".footer-mobile").html(json.records[i].Setting);
+          }
+          else if (json.records[i].Configuration == "Contact Us Address"){
+            $(".footer-address").html(json.records[i].Setting);
+          }
         }
     
 
@@ -100,7 +109,7 @@
           $.getJSON(action_url+"&purpose="+select, function (json2) {
 
               for (var i = 0; i < json.records.length; i++) {
-                  alert(json2.records[i].Name);
+                  /*alert(json2.records[i].Name+ json2.records[i].Description);*/
               }
                 
             
