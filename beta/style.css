@@ -131,3 +131,51 @@
 		position: relative;
 	}
 	
+	.acm-navbar .burger{
+		cursor: pointer;
+		color:#0083c0;
+	}
+
+	.menu-toggle .burger{
+		color: #aa0000;
+	}
+
+	.site-content{
+		min-height: 80vh;
+		position: relative;
+		transition: 0.15s ease-in-out;
+		left: 0
+	}
+
+	.menu-toggle .site-content{
+		left: -80%;
+	}
+
+	.menu-icon{
+		width: 40px;
+	}
+
+
+	@media screen and (max-width: 992px) {
+
+		.landing-title{
+			font-size: 1.8rem;
+		}
+
+		.landing-subtitle{
+			font-size: 1rem;
+		}
+
+	  .mobile-menu {
+	  	position: fixed;
+	  	transition: 0.15s ease-in-out;
+	  	z-index: -1;
+	  	left: 100%;
+	  	opacity: 0;
+	  }
+
+	  .menu-toggle .mobile-menu{
+	  	left: 30%;
+	  	opacity: 1;
+	  }
+	}

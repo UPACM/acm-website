@@ -41,19 +41,24 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 		<div class="site-container">
+			<div class="site-content">
 			<nav class="w-100 position-fixed acm-navbar">
-				<div class="p-3 bg">
+				<div class="py-3 bg">
 					<div class="container">
-						<div class="d-flex flex-column flex-lg-row">
+						<div class="d-flex flex-lg-row">
 							<a href="./index">
 								<img src="files/logo_long.png" height="48px">
 							</a>
 
-							<span class="ml-auto d-lg-flex" >
-								<a class="mr-3 my-auto nav-about" href="./about">About Us</a>
-								<a class="mr-3 my-auto nav-committees" href="./committees">Committees</a>
-								<a class="my-auto nav-contact" href="#">Contact</a>
+							<span class="ml-auto my-auto d-lg-none d-block h3 burger mr-1">
+								<i class="fas fa-bars"></i>
 							</span>
+
+							<div class="ml-lg-auto d-lg-inline-flex flex-column flex-lg-row mobile-menu" >
+								<a class="mr-3 my-lg-auto nav-about d-block my-3" href="./about"><i class="fas fa-question d-lg-none menu-icon"></i> About Us</a>
+								<a class="mr-3 my-lg-auto nav-committees d-block my-3" href="./committees"><i class="fas fa-users d-lg-none menu-icon"></i>Committees</a>
+								<a class="my-lg-auto nav-contact d-block my-3" href="#"><i class="fas fa-mobile-alt d-lg-none menu-icon"></i>Contact</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -196,6 +201,7 @@
 						© 2018 - Association for Computing Machinery University of the Philippines Diliman Student Chapter Inc.
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 		

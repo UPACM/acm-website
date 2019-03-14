@@ -132,8 +132,16 @@
 
   $('.landing-scroll-down').click(function(){
       var y = $(window).scrollTop();
-      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000) 
+      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000);
    }); 
+
+  $('.acm-navbar .burger').click(function(){
+      $( ".site-container" ).toggleClass( "menu-toggle" );
+   }); 
+
+  $( window ).resize(function() {
+    $( ".site-container" ).removeClass( "menu-toggle" )
+  });
  
 
   /*
