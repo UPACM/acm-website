@@ -122,7 +122,7 @@
 
   
     /* Update Footer Year */
-    $(".curr-date").html(Date().getFullYear());
+    $(".curr-date").html(new Date().getFullYear());
 
 
 
