@@ -16,6 +16,7 @@
     var EventsOn = false;
     var HeaderMode = "Video";
 
+    /* Main Sheet */
     $.getJSON(action_url+"&purpose="+select, function (json) {
 
     // Set the variables from the results array
@@ -103,6 +104,7 @@
           }
         }
     
+        /* Events Sheet */
 
         if (EventsOn){
           select = "events";
@@ -119,7 +121,8 @@
     });
 
   
-    
+    /* Update Footer Year */
+    $(".curr-date").html(Date().getFullYear());
 
 
 
