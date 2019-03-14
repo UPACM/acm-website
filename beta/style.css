@@ -158,6 +158,10 @@
 
 	@media screen and (max-width: 992px) {
 
+		h1{
+			font-size:1.8rem;
+		}
+
 		.landing-title{
 			font-size: 1.8rem;
 		}
