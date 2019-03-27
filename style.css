@@ -155,6 +155,15 @@
 		width: 40px;
 	}
 
+	.preloader{
+		position: fixed;
+		z-index: 999999;
+		background-color: white;
+		top: 0;
+		transition: 0.20s ease-in-out;
+		display: none;
+	}
+
 
 	@media screen and (max-width: 992px) {
 
