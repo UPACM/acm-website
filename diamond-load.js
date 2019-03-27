@@ -1,5 +1,7 @@
 
 /* Diamond Load */
+  
+  $(".preloader").css("display", "block");
 
   var canvas = document.querySelector('canvas');
 
@@ -93,7 +95,6 @@
 
   animate();
 
-  $(".preloader").css("display", "block");
 
   $(window).on("load", function() {
     $(".preloader").fadeOut();
