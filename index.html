@@ -46,25 +46,7 @@
 			</div>
 			<div class="site-content">
 			<nav class="w-100 position-fixed acm-navbar">
-				<div class="py-3 bg">
-					<div class="container">
-						<div class="d-flex flex-lg-row">
-							<a href="./index">
-								<img src="files/logo_long.png" height="48px">
-							</a>
-
-							<span class="ml-auto my-auto d-lg-none d-block h3 burger mr-1">
-								<i class="fas fa-bars"></i>
-							</span>
-
-							<div class="ml-lg-auto d-lg-inline-flex flex-column flex-lg-row mobile-menu" >
-								<a class="mr-3 my-lg-auto nav-about d-block my-3" href="./about"><i class="fas fa-question d-lg-none menu-icon"></i> About Us</a>
-								<a class="mr-3 my-lg-auto nav-committees d-block my-3" href="./committees"><i class="fas fa-users d-lg-none menu-icon"></i>Committees</a>
-								<a class="my-lg-auto nav-contact d-block my-3" href="#"><i class="fas fa-mobile-alt d-lg-none menu-icon"></i>Contact</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</nav>
 
 			<div class="header text-center">
@@ -164,46 +146,8 @@
 			</div>
 
 
-			<div class="w-100 footer" style="background-color: #0083c0; color: white; min-height: 250px">
-				<div class="container p-5">
-					<div class="row">
-						<div class="col-lg-4 d-flex flex-column">
-							<h3 class="h3 mb-4"><strong>UP ACM</strong></h3>
-
-							<a href="#">About</a>
-							<a href="#">Events</a>
-							<a href="#">Committees</a>
-							<a href="#">Partners</a>
-							<a href="http://upacm.net/automaton">Automaton</a>
-						</div>
-						<div class="col-lg-4">
-							<h3 class="h3 mb-4"><strong>Contact Us</strong></h3>
-
-							<p><a href="mailto:council@upacm.net"><i class="fas fa-envelope mr-2"></i> <span class="footer-mail"></span></a></p>
-
-							<p><i class="fas fa-mobile-alt mr-3"></i> <span class="footer-mobile"></span></p>
-
-							<p><i class="fas fa-map-marker mr-3"></i>
-							<span class="footer-address"></span></p>
-						</div>
-						<div class="col-lg-4">
-							<h3 class="h3 mb-4"><strong>Connect with Us!</strong></h3>
-
-							<div class="d-flex">
-								<a href="https://www.facebook.com/upacm/" class="social-media-button"><i class="m-auto fab fa-facebook-f"></i></a>
-								<a href="https://twitter.com/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-twitter"></i></a>
-								<a href="https: ph.linkedin.com/company/upacm" class="social-media-button ml-2"><i class="m-auto fab fa-linkedin-in"></i></a>
-								<a href="https://www.youtube.com/user/upacmYT" class="social-media-button ml-2"><i class="m-auto fab fa-youtube"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="copyright w-100 p-4" style="background-color: #003f76;">
-					<div class="container text-center">
-						© <span class="curr-date">2019</span> - Association for Computing Machinery University of the Philippines Diliman Student Chapter Inc.
-					</div>
-				</div>
+			<div class="w-100 footer acm-footer" style="background-color: #0083c0; color: white; min-height: 250px">
+			
 			</div>
 			</div>
 		</div>
@@ -226,7 +170,8 @@
 		
 
 		<script>
-			
+			$("acm-navbar").load("partials/header.html");
+			$("acm-footer").load("partials/footer.html");
 		</script>
 	</body>
 </html>
