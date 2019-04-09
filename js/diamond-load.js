@@ -72,7 +72,7 @@
   }
   
 
-  function animate(){
+  function animateDiamond(){
     DrawDiamond();
   
 
@@ -88,19 +88,20 @@
     context.fillText("LOADING...", window.innerWidth/2, window.innerHeight/2 +8);
 
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateDiamond);
 
 
   }
 
-  animate();
+  animateDiamond();
 
 
   $(window).on("load", function() {
     $(".preloader").fadeOut();
 
+    /* 10 second max loading screen time */
     setTimeout(function() {
-    $(".preloader").remove();
-  }, 10000);
+      $(".preloader").remove();
+    }, 10000);
 
   });
