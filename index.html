@@ -43,14 +43,14 @@
 			    });
 			  };
 
-			  console.log(FB.api(
+			  FB.api(
 				  '/upacm',
 				  'GET',
 				  {"fields":"posts{message,full_picture,permalink_url}"},
 				  function(response) {
 				      console.log(response);
 				  }
-				));
+				);
 
 		</script>
 		
