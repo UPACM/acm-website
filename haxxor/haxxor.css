@@ -1,0 +1,58 @@
+
+@font-face {
+    font-family: 'Orator Std';
+    src: url("../fonts/orator-std/OratorStd.otf") format("opentype");
+	src: url("../fonts/orator-std/OratorStd.eot"), /* IE9 Compat Modes */
+    	 url("../fonts/orator-std/OratorStd.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ 
+         url("../fonts/orator-std/OratorStd.woff") format("woff"), /* Modern Browsers */
+         url("../fonts/orator-std/OratorStd.ttf")  format("truetype"), /* Safari, Android, iOS */
+}
+
+
+
+*{
+font-family: 'Orator Std', 'Open Sans', sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+}
+
+a{
+	color: red;
+	font-weight: 500;
+
+}
+
+a:hover{
+	color: red;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.logo:hover{
+	opacity: 0.85;
+}
+
+.header{
+	height: 90vh;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color: red;
+}
+
+.btn-secondary{
+	background-color: white;
+	border-color: white;
+	color: red;
+}
+
+body, .acm-navbar .bg, .preloader{
+	background: black;
+	color: white;
+}
+
+@media screen and (max-width: 992px) {
+
+
+}

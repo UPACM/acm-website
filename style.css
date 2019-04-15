@@ -162,6 +162,7 @@
 		top: 0;
 		transition: 0.20s ease-in-out;
 		display: none;
+		height: 100vh;
 	}
 
 
