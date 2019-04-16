@@ -123,7 +123,7 @@
 
         FB.api('/upacm', 'GET',
           {
-            "fields":"posts{message,full_picture,permalink_url,created_time}",
+            "fields":"posts{message,full_picture,permalink_url,created_time,object_id},videos{live_status,embed_html,id}",
             "access_token": acctoken
           },
           function(response) {
@@ -158,12 +158,11 @@
       link = callback.posts.data[String(i)].permalink_url;
       date = new Date(callback.posts.data[String(i)].created_time);
       imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
+      imagelink = "<a href='" + link + "'>"+ imagepic + "</a>";
       message = message +  `<hr>
       <div class='row'>
         <div class='col-lg-4'>
-          <a href='` + link + `'>
-            `+ imagepic +`
-          </a>
+          ` + AddFBVids(imagelink, callback.posts.data[String(i)].object_id, callback.videos.data) +   `
         </div>
         <div class='col-lg-8 d-flex flex-column'>
           <p>` + date.toLocaleString(undefined, dateoptions) + `</p>
@@ -175,4 +174,39 @@
 
     }
     $(".soc-fb").html(message);
+  }
+
+  function AddFBVids(imagestring, obj_id, video_array){
+
+
+    let is_video = false;
+    let counter = 0;
+    let video_html = "";
+    let is_live = false;
+    let result = "";
+
+    while(counter < video_array.length){
+
+      if(obj_id == video_array[counter].id ){
+        video_html = video_array[counter].embed_html;
+        is_video = true;
+        if (video_array[counter].live_status == "LIVE"){
+          is_live = true;
+        }
+
+        break;
+      }
+
+      counter = counter + 1;
+    }
+
+    if(is_video == true){
+      result = video_html;
+    }
+    else{
+      result = imagestring;
+    }
+
+
+    return result;
   }
