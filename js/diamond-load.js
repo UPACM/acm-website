@@ -15,6 +15,7 @@
   var percent = 0;
   var i = 0;
   var range = 15;
+  var diamond_colorstat = "#aaa";
   var radius = 80;
 
   function ResizeCanvas(){
@@ -48,7 +49,7 @@
     
     
     context.lineWidth = linewidth;
-    context.strokeStyle = "#aaa"
+    context.strokeStyle = diamond_colorstat;
     
     context.stroke();
 
@@ -97,6 +98,7 @@
 
 
   $(window).on("load", function() {
+    diamond_colorstat = "#0083c0";
     $(".preloader").fadeOut();
 
     /* 10 second max loading screen time */
