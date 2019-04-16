@@ -115,19 +115,15 @@
 
               for (var i = 0; i < json.records.length; i++) {
                   /*alert(json2.records[i].Name+ json2.records[i].Description);*/
-              }
-                
-            
+              }                
           });
         }
-
-
 
         /* FB Data */
 
         FB.api('/upacm', 'GET',
           {
-            "fields":"posts{message,full_picture,permalink_url}",
+            "fields":"posts{message,full_picture,permalink_url,created_time}",
             "access_token": acctoken
           },
           function(response) {
@@ -145,14 +141,14 @@
   function FBDataCallback(callback){
     //console.log(callback.posts);
     var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var message = ""
-    var tempmsg = "";
-    var imagepic = "";
-    var link = "";
+    var message, tempmsg, imagepic, link, date = "", "",  "", "", "";
+
     for (var i = 0; i < 4; i++){
       tempmsg = callback.posts.data[String(i)].message.replace(/\n/g, '<br>');
       tempmsg = tempmsg.replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
       link = callback.posts.data[String(i)].permalink_url;
+      date = new Date(callback.posts.data[String(i)].created_time);
+      date.setHours(date.getHours + 8);
       imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
       message = message +  `<hr>
       <div class='row'>
@@ -162,6 +158,7 @@
           </a>
         </div>
         <div class='col-lg-8 d-flex'>
+          <p>` + date.toLocaleString() + `</p>
           <p class='my-auto'>
             ` + tempmsg.slice(0,500) + `
           </p>
