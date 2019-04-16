@@ -2,10 +2,9 @@
   var script_url = "https://script.google.com/macros/s/AKfycbz1b4YCWoYMxOol0cIuX_X0DOd0YS3zZTkzTg_q_b2Ik3nKZvY/exec";
 
   var loadingdone = 0;
-  
+  var acctoken = "";
 
   InitWebsite();
-  
 
   function InitWebsite(){
 
@@ -102,6 +101,10 @@
           else if (json.records[i].Configuration == "Contact Us Address"){
             $(".footer-address").html(json.records[i].Setting);
           }
+           else if (json.records[i].Configuration == "Facebook Access Token"){
+            acctoken = json.records[i].Setting;
+          }
+          
         }
     
         /* Events Sheet */
@@ -117,183 +120,54 @@
             
           });
         }
+
+
+
+        /* FB Data */
+
+        FB.api('/upacm', 'GET',
+          {
+            "fields":"posts{message,full_picture,permalink_url}",
+            "access_token": acctoken
+          },
+          function(response) {
+              acctoken = response;
+              FBDataCallback(acctoken);
+              $(".fb-script-sm").remove();
+          }
+        );
         
     });
-
-  
-    /* Update Footer Year */
-    $(".curr-date").html(new Date().getFullYear());
-
-
-
-
-
-    loadingdone = loadingdone + 1;
-
-
+   
   }
 
-  $('.landing-scroll-down').click(function(){
-      var y = $(window).scrollTop();
-      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000);
-   }); 
 
-  $('.acm-navbar .burger').click(function(){
-      $( ".site-container" ).toggleClass( "menu-toggle" );
-   }); 
-
-  $( window ).resize(function() {
-    $( ".site-container" ).removeClass( "menu-toggle" )
-  });
- 
-
-  /*
-
-    // Make an AJAX call to Google Script
-    function insert_value() {
-      
-  	$("#re").css("visibility","hidden");
-  	 document.getElementById("loader").style.visibility = "visible";
-  	$('#mySpinner').addClass('spinner');
-
-    var id1=	$("#id").val();
-  	var name= $("#name").val();
-    var data= $("#data2").val();
-  	
-  	
-      var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&data2="+data+"&action=insert";
-      console.log(url);
-    
-
-      var request = jQuery.ajax({
-        crossDomain: true,
-        url: url ,
-        method: "GET",
-        dataType: "jsonp"
-      });
+  function FBDataCallback(callback){
+    //console.log(callback.posts);
+    var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var message = ""
+    var tempmsg = "";
+    var imagepic = "";
+    var link = "";
+    for (var i = 0; i < 4; i++){
+      tempmsg = callback.posts.data[String(i)].message.replace(/\n/g, '<br>');
+      tempmsg = tempmsg.replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
+      link = callback.posts.data[String(i)].permalink_url;
+      imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
+      message = message +  `<hr>
+      <div class='row'>
+        <div class='col-lg-4'>
+          <a href='` + link + `"'>
+            `+ imagepic +`
+          </a>
+        </div>
+        <div class='col-lg-8 d-flex'>
+          <p class='my-auto'>
+            ` + tempmsg.slice(0,500) + `
+          </p>
+        </div>
+      </div>`;
 
     }
-
-
-    
-  
- 
-  
-  
-  function update_value(){
-	$("#re").css("visibility","hidden");
-     document.getElementById("loader").style.visibility = "visible";
-	
-	
-  var id1=	$("#id").val();
-	var name= $("#name").val();
-	var data= $("#data2").val();
-	
-	
-    var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&data2="+data+"&action=update";
-  
-
-    var request = jQuery.ajax({
-      crossDomain: true,
-      url: url ,
-      method: "GET",
-      dataType: "jsonp"
-    });
-
-	
+    $(".soc-fb").html(message);
   }
-
-  
- 
-  
-  
-  function delete_value(){
-	$("#re").css("visibility","hidden");
-     document.getElementById("loader").style.visibility = "visible";
-	$('#mySpinner').addClass('spinner');
-  var id1=	$("#id").val();
-	var name= $("#name").val();
-  var data= $("#data2").val();
-	
-	
-    var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&data2="+data+"&action=delete";
-  
-
-    var request = jQuery.ajax({
-      crossDomain: true,
-      url: url ,
-      method: "GET",
-      dataType: "jsonp"
-    });
-
-  }
-
-
-  
-  
-  // print the returned data
-  function ctrlq(e) {
-  
-	
-	$("#re").html(e.result);
-	$("#re").css("visibility","visible");
-	read_value();
-	
-  }
-  
-  
-
-  
-function read_value() {
-
-$("#re").css("visibility","hidden");
-   
-   document.getElementById("loader").style.visibility = "visible";
- var url = script_url+"?action=read";
-
-    // CREATE DYNAMIC TABLE.
-        var table = document.createElement("table");
-
-        var header = table.createTHead();
-        var row = header.insertRow(0);     
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-      
-        cell1.innerHTML = "<b>ID</b>";
-        cell2.innerHTML = "<b>Data</b>";
-        cell3.innerHTML = "<b>Name</b>";
-        
-
-  $.getJSON(url, function (json) {
-
-    // Set the variables from the results array
-   
-
-      
-        // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < json.records.length; i++) {
-
-            tr = table.insertRow(-1);
-				    var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = json.records[i].ID;
-    				tabCell = tr.insertCell(-1);
-    				tabCell.innerHTML = json.records[i].DATA;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = json.records[i].NAME;
-            }
-       
-		
-    });
-
-
-     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("showData");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-
-
-
-    document.getElementById("loader").style.visibility = "hidden";
-    $("#re").css("visibility","visible");
-	} */

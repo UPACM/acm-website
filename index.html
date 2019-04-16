@@ -31,30 +31,7 @@
 	</head>
 
 	<body>
-		<div id="fb-root"></div>
-		<script src="https://connect.facebook.net/en_US/sdk.js"></script>
-		<script>
-			 window.fbAsyncInit = function() {
-			    FB.init({
-			      appId            : '1540758932722349',
-			      autoLogAppEvents : true,
-			      xfbml            : true,
-			      version          : 'v3.2'
-			    });
-			  };
-
-			  FB.api(
-				  '/upacm',
-				  'GET',
-				  {"fields":"posts{message,full_picture,permalink_url}"},
-				  function(response) {
-				      console.log(response);
-				  }
-				);
-
-		</script>
-		
-
+		<div id="fb-root"></div>		
 		<div class="site-container">
 			<div class="preloader">
 				<canvas class="loading-diamond"></canvas>
@@ -108,7 +85,7 @@
 
 						  <div class="card">
 						  	<div class="text-center" style="height: 150px; overflow: hidden;">
-						    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/31817406_1986574731355013_5310186149027774464_n.jpg?_nc_cat=110&_nc_ht=scontent.fceb1-1.fna&oh=2709cf724ce5bee2a1f9c6aabc07d4b0&oe=5C919825" alt="Haxxor">
+						    	<img class="card-img-top" src="" alt="Haxxor">
 							</div>
 						    <div class="card-body">
 						   		<p class="card-text"><small class="text-muted">COMPETITION</small></p>
@@ -131,7 +108,7 @@
 						  </div>
 						  <div class="card">
 						  	<div class="text-center" style="height: 150px; overflow: hidden;">
-						    	<img class="card-img-top" src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.0-9/36246637_2052271088118710_4735618253236207616_n.jpg?_nc_cat=102&_nc_ht=scontent.fceb1-1.fna&oh=060af2922f4301d81290ace2edde0718&oe=5CA1A854" alt="Easy As Py">
+						    	<img class="card-img-top" src="" alt="Easy As Py">
 							</div>
 						    <div class="card-body">
 						   		<p class="card-text"><small class="text-muted">WORKSHOP</small></p>
@@ -150,11 +127,8 @@
 					<h1 class="mx-auto my-3" style="font-weight: bold; color: #0083c0">SOCIAL NEWS</h1>
 
 					<div class="row">
-						<div class="col-md-6 soc-twitter">
+						<div class="soc-fb">
 							<a class="twitter-timeline" href="https://twitter.com/upacm?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="4">Tweets by upacm</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-						</div>
-						<div class="col-md-6 d-flex soc-fb">
-							<div class="fb-page mx-auto" data-href="https://www.facebook.com/upacm/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/upacm/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/upacm/">Association for Computing Machinery - UP Diliman Student Chapter, Inc.</a></blockquote></div>
 						</div>
 					</div>
 				</div>
@@ -169,6 +143,19 @@
 		
 	    <!-- jQuery -->
 	  	<script src="./vendor/jquery/jquery.js"></script>
+
+	  	<!-- Facebook SDK -->
+	  	<script src="https://connect.facebook.net/en_US/sdk.js"></script>
+	  	<script class="fb-script-sm">
+	  		window.fbAsyncInit = function() {
+	        FB.init({
+	            appId            : '1540758932722349',
+	            autoLogAppEvents : true,
+	            xfbml            : true,
+	            version          : 'v3.2'
+	          });
+	        };
+	    </script>
 
 	  	<!-- Database -->
 	  	<script src="./js/acm-website-db.js"></script>
