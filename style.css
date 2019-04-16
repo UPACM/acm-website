@@ -5,6 +5,10 @@
     text-rendering: optimizeLegibility;
 	}
 
+	body{
+		font-size: 1rem;
+	}
+
 	a{
 		color: #0083c0;
 		font-weight: 500;
@@ -166,6 +170,24 @@
 		width: 100vw;
 	}
 
+	.soc-media-photon iframe, .soc-media-photon img{
+		width: 75%;
+		max-width: 420px;
+		margin: auto;
+	}
+
+	.soc-media-photon iframe{
+		max-height:280px;	
+	}
+
+	.socmed-date{
+		background-color: #0083c0;
+	    color: white;
+	    font-family: 'Montserrat';
+	    padding: 0.5em 2em;
+	    font-size: 0.85rem;
+	    font-weight: 500;
+	}
 
 	@media screen and (max-width: 992px) {
 
@@ -193,4 +215,8 @@
 	  	left: 30%;
 	  	opacity: 1;
 	  }
+
+	  body{
+		font-size: 0.85rem;
+		}
 	}

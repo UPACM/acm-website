@@ -140,7 +140,6 @@
 
   function FBDataCallback(callback){
     //console.log(callback.posts);
-    var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     var message ="";
     var tempmsg, imagepic, link, date;
     var dateoptions = { 
@@ -154,25 +153,25 @@
 
     for (var i = 0; i < 4; i++){
       tempmsg = callback.posts.data[String(i)].message.replace(/\n/g, '<br>');
-      tempmsg = tempmsg.replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
       link = callback.posts.data[String(i)].permalink_url;
       date = new Date(callback.posts.data[String(i)].created_time);
-      imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
-      imagelink = "<a href='" + link + "'>"+ imagepic + "</a>";
+      imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '">';
+      imagelink = "<a href='" + link + "' class='m-auto d-flex flex-column'>"+ imagepic + "</a>";
       message = message +  `<hr>
       <div class='row'>
-        <div class='col-lg-4'>
+        <div class='col-lg-5 soc-media-photon d-flex flex-column'>
           ` + AddFBVids(imagelink, callback.posts.data[String(i)].object_id, callback.videos.data) +   `
         </div>
-        <div class='col-lg-8 d-flex flex-column'>
-          <p>` + date.toLocaleString(undefined, dateoptions) + `</p>
-          <p class='my-auto'>
-            ` + tempmsg.slice(0,500) + `
-          </p>
+        <div class='col-lg-7 d-flex flex-column'>
+          <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto">` + date.toLocaleString(undefined, dateoptions) + `</p>
+          <div class='py-4'>
+            ` + GetParagraph(tempmsg,500) + `
+          </div>
         </div>
       </div>`;
 
     }
+
     $(".soc-fb").html(message);
   }
 
@@ -209,4 +208,31 @@
 
 
     return result;
+  }
+
+  function GetParagraph(msg, charcount){
+
+    let tempmesg = msg.split("<br>");
+    let result = "";
+    let currentcount = 0;
+    let currentindex = 0;
+
+    var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var hashtagRegEx = /(^|\s)(#[a-z\d][\w-]*)/ig;
+    let the_html = "";
+    const tagcolor = "#47565d";
+
+
+    /*console.log(tempmesg);*/
+
+    while( (currentcount <= charcount) && tempmesg[currentindex] != null ){
+      currentcount = currentcount + tempmesg[currentindex].length;
+      the_html =  tempmesg[currentindex].replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
+      the_html = the_html.replace(hashtagRegEx, function(tag){ return '<span style="color:' + tagcolor + '">' + tag + '</span>' });
+      result = result + "<p>" + the_html + "</p>";
+      currentindex = currentindex+1;
+    }
+
+    return result;
+
   }
