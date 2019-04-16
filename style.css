@@ -177,7 +177,8 @@
 	}
 
 	.soc-media-photon iframe{
-		max-height:280px;	
+		max-height:315px;	
+		height: 75%;
 	}
 
 	.socmed-date{
