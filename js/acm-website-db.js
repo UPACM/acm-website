@@ -141,14 +141,22 @@
   function FBDataCallback(callback){
     //console.log(callback.posts);
     var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var message, tempmsg, imagepic, link, date = "", "",  "", "", "";
+    var message ="";
+    var tempmsg, imagepic, link, date;
+    var dateoptions = { 
+      month: 'long', 
+      day: 'numeric', 
+      year: 'numeric', 
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    };
 
     for (var i = 0; i < 4; i++){
       tempmsg = callback.posts.data[String(i)].message.replace(/\n/g, '<br>');
       tempmsg = tempmsg.replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
       link = callback.posts.data[String(i)].permalink_url;
       date = new Date(callback.posts.data[String(i)].created_time);
-      date.setHours(date.getHours + 8);
       imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
       message = message +  `<hr>
       <div class='row'>
@@ -157,8 +165,8 @@
             `+ imagepic +`
           </a>
         </div>
-        <div class='col-lg-8 d-flex'>
-          <p>` + date.toLocaleString() + `</p>
+        <div class='col-lg-8 d-flex flex-column'>
+          <p>` + date.toLocaleString(undefined, dateoptions) + `</p>
           <p class='my-auto'>
             ` + tempmsg.slice(0,500) + `
           </p>
