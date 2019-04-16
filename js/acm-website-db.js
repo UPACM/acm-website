@@ -157,7 +157,7 @@
       message = message +  `<hr>
       <div class='row'>
         <div class='col-lg-4'>
-          <a href='` + link + `"'>
+          <a href='` + link + `'>
             `+ imagepic +`
           </a>
         </div>
