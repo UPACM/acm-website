@@ -21,7 +21,7 @@
 		border-radius: 40px;
 	}
 
-	.btn-secondary{
+	.btn-secondary, .btn-secondary:active, .btn-secondary:focus{
 		background-color: white;
 		border-color: white;
 		color: #0083c0;
