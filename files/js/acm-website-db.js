@@ -166,7 +166,9 @@
           ` + AddFBVids(imagelink, callback.posts.data[String(i)].object_id, callback.videos.data) +   `
         </div>
         <div class='col-lg-9 col-md-8 d-flex flex-column'>
-          <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto">` + date.toLocaleString(undefined, dateoptions) + `</p>
+          <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto"> 
+            <i class="fas fa-calendar-alt mr-2"></i>` + date.toLocaleString(undefined, dateoptions) + `
+          </p>
           <div class='p-4'>
             ` + GetParagraph(tempmsg,500) + `
           </div>
@@ -238,18 +240,16 @@
   }
 
   function FBPreviewHover(image, link){
-
-    return `
-      <div class="soc-med-fbprev m-auto d-flex" >
-          <a href='` + link + `' class='m-auto d-block socmed-prevlink'>
-            `+ image + `
-            <div class="position-absolute soc-med-fbprev-overlay d-flex" style="top:0; left:0;">
-              <div class ="socmed-circle m-auto d-flex">
-                <i class="fas fa-external-link-alt m-auto"></i>
-              </div>
-            </div>
-          </a>
-      </div>
-    `;
+    
+  return `<div class="soc-med-fbprev m-auto d-flex">
+              <a href='` + link + `' class='m-auto d-block socmed-prevlink'>
+                `+ image + `
+                <div class="position-absolute soc-med-fbprev-overlay d-flex" style="top:0; left:0;">
+                  <div class ="socmed-circle m-auto d-flex">
+                    <i class="fas fa-external-link-alt m-auto"></i>
+                  </div>
+                </div>
+              </a>
+          </div>`;
 
   }
