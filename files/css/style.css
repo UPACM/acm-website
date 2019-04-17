@@ -227,6 +227,38 @@
 	    font-weight: 500;
 	}
 
+
+	/* Diamond Grid */
+
+	.diamond-grid
+	{
+		width:70%;
+		margin:150px auto 0;
+	}
+
+	.diamond-grid .item
+	{
+		width:200px;
+		height:200px;
+		background: #fff;
+		opacity:0.5;
+		transition: 0.15s;
+	}
+
+	.diamond-grid .item:hover
+	{
+		opacity:1;
+	}
+
+	.diamond-grid .item img
+	{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform:translateY(-50%);
+		width:100%;
+	}
+
 	@media screen and (max-width: 992px) {
 
 		h1{
@@ -271,4 +303,14 @@
 		.soc-media-photon .soc-med-fbprev .socmed-prevlink img{
 			max-height: 320px;
 		}
+	}
+
+	@media (max-width: 767px)
+	{
+		.diamond-grid
+		{
+			width:100%;
+			margin:0 auto;
+		}
+		
 	}

@@ -7,7 +7,15 @@ function initializeSite(){
 	$(".acm-footer").load("./partials/footer.html");
 
 	/* Update Footer Year */
-    $(".curr-date").html(new Date().getFullYear());
+  $(".curr-date").html(new Date().getFullYear());
+
+  $(".diamond-grid").diamonds({
+    size:200,
+    gap:5,
+    hideIncompleteRow:false,
+    autoRedraw:true,
+    itemSelector:".item"
+  });
 
 }
 
