@@ -3,6 +3,7 @@
 
   var loadingdone = 0;
   var acctoken = "";
+  const fb_post_limit = 10;
 
   InitWebsite();
 
@@ -123,8 +124,8 @@
 
         FB.api('/upacm', 'GET',
           {
-            "fields":"posts{message,full_picture,permalink_url,created_time,object_id},videos{live_status,embed_html,id}",
-            "access_token": acctoken
+            "fields":"posts.limit("+fb_post_limit+"){message,full_picture,permalink_url,created_time,object_id},videos.limit("+fb_post_limit+"){live_status,embed_html,id}",
+            "access_token": acctoken,
           },
           function(response) {
               acctoken = response;
@@ -139,7 +140,7 @@
 
 
   function FBDataCallback(callback){
-    //console.log(callback.posts);
+    //console.log(callback);
     var message ="";
     var tempmsg, imagepic, link, date;
     var dateoptions = { 
@@ -151,18 +152,20 @@
       hour12: true
     };
 
-    for (var i = 0; i < 4; i++){
+    const fb_post_limit_displayed = 4;
+
+    for (var i = 0; i < fb_post_limit_displayed; i++){
       tempmsg = callback.posts.data[String(i)].message.replace(/\n/g, '<br>');
       link = callback.posts.data[String(i)].permalink_url;
       date = new Date(callback.posts.data[String(i)].created_time);
-      imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '">';
-      imagelink = "<a href='" + link + "' class='m-auto d-flex flex-column'>"+ imagepic + "</a>";
+      imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
+      imagelink = FBPreviewHover(imagepic, link);
       message = message +  `<hr>
-      <div class='row'>
-        <div class='col-lg-5 soc-media-photon d-flex flex-column'>
+      <div class='row m-0'>
+        <div class='col-lg-4 soc-media-photon d-flex flex-column'>
           ` + AddFBVids(imagelink, callback.posts.data[String(i)].object_id, callback.videos.data) +   `
         </div>
-        <div class='col-lg-7 d-flex flex-column'>
+        <div class='col-lg-8 d-flex flex-column'>
           <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto">` + date.toLocaleString(undefined, dateoptions) + `</p>
           <div class='py-4'>
             ` + GetParagraph(tempmsg,500) + `
@@ -222,9 +225,6 @@
     let the_html = "";
     const tagcolor = "#47565d";
 
-
-    /*console.log(tempmesg);*/
-
     while( (currentcount <= charcount) && tempmesg[currentindex] != null ){
       currentcount = currentcount + tempmesg[currentindex].length;
       the_html =  tempmesg[currentindex].replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
@@ -234,5 +234,22 @@
     }
 
     return result;
+
+  }
+
+  function FBPreviewHover(image, link){
+
+    return `
+      <div class="soc-med-fbprev m-auto d-flex" >
+          <a href='` + link + `' class='m-auto d-block socmed-prevlink'>
+            `+ image + `
+            <div class="position-absolute soc-med-fbprev-overlay d-flex" style="top:0; left:0;">
+              <div class ="socmed-circle m-auto d-flex">
+                <i class="fas fa-external-link-alt m-auto"></i>
+              </div>
+            </div>
+          </a>
+      </div>
+    `;
 
   }
