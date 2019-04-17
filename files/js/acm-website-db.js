@@ -162,10 +162,10 @@
       imagelink = FBPreviewHover(imagepic, link);
       message = message +  `<hr>
       <div class='row m-0'>
-        <div class='col-lg-3 soc-media-photon d-flex flex-column'>
+        <div class='col-lg-3 col-md-4 soc-media-photon d-flex flex-column'>
           ` + AddFBVids(imagelink, callback.posts.data[String(i)].object_id, callback.videos.data) +   `
         </div>
-        <div class='col-lg-9 d-flex flex-column'>
+        <div class='col-lg-9 col-md-8 d-flex flex-column'>
           <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto">` + date.toLocaleString(undefined, dateoptions) + `</p>
           <div class='p-4'>
             ` + GetParagraph(tempmsg,500) + `
