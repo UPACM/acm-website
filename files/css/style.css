@@ -75,6 +75,10 @@
 		margin: 0.65em 0
 	}
 
+	.footer .copyright{
+		background-color: #003f76;
+	}
+
 	.social-media-button{
 		border-radius: 100%;
 		background-color: white;
