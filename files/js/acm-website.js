@@ -26,10 +26,14 @@ function initializeSite(){
 
   $('.acm-navbar').on("click", ".burger", function(){
       $( ".site-container" ).toggleClass( "menu-toggle" );
+      $( ".acm-navbar .burger i" ).toggleClass( "fa-bars" );
+      $( ".acm-navbar .burger i" ).toggleClass( "fa-times" );
    }); 
 
   $( window ).resize(function() {
     $( ".site-container" ).removeClass( "menu-toggle" )
+     $( ".acm-navbar .burger i" ).addClass( "fa-bars" );
+      $( ".acm-navbar .burger i" ).removeClass( "fa-times" );
   });
 
 initializeSite();
