@@ -19,12 +19,12 @@ function initializeSite(){
 
 }
 
- $('.landing-scroll-down').click(function(){
+ $('.landing-scroll-down').on( "click", function(){
       var y = $(window).scrollTop();
       $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000);
    }); 
 
-  $('.acm-navbar .burger').click(function(){
+  $('.acm-navbar').on("click", ".burger", function(){
       $( ".site-container" ).toggleClass( "menu-toggle" );
    }); 
 
