@@ -339,6 +339,14 @@
 		{
 			width:100%;
 			margin:0 auto;
+			max-width: 300px;
+		}
+
+		.diamond-box-wrap{
+
+			height: 125px !important;
+			width: 125px !important;
+
 		}
 		
 	}

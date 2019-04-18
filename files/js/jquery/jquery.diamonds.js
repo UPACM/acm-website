@@ -218,7 +218,7 @@
             }
         }
 
-        wrap.css("min-width", this.options.minDiamondsPerRow * this.options.size);
+       /* wrap.css("min-width", this.options.minDiamondsPerRow * this.options.size);*/
 
         return wrap;
     };
