@@ -5,14 +5,9 @@
   var acctoken = "";
   const fb_post_limit = 10;
 
-  InitWebsite();
-
-  function InitWebsite(){
+  function loadData(select){
 
     var action_url = script_url+"?action=read";
-
-    var select = "main";
-
     var EventsOn = false;
     var HeaderMode = "Video";
 
@@ -81,7 +76,9 @@
             
           }
           else if (json.records[i].Configuration == "Events Description"){
-            $(".events-description").html(json.records[i].Setting);
+              if (EventsOn){
+                $(".events-description").html(json.records[i].Setting);
+              }
           }
           else if (json.records[i].Configuration == "Show Facebook"){
             if (json.records[i].Setting == false){
@@ -114,9 +111,19 @@
           select = "events";
           $.getJSON(action_url+"&purpose="+select, function (json2) {
 
-              for (var i = 0; i < json.records.length; i++) {
-                  /*alert(json2.records[i].Name+ json2.records[i].Description);*/
+              var events_dataHTML = "";
+              for (var i = 0; i < json2.records.length; i++) {
+                events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
               }                
+              $(".events .diamond-grid").html(events_dataHTML);
+
+              $(".diamond-grid").diamonds({
+                size:200,
+                gap:5,
+                hideIncompleteRow:false,
+                autoRedraw:true,
+                itemSelector:".item"
+              });
           });
         }
 

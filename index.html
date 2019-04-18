@@ -31,10 +31,10 @@
 	</head>
 
 	<body>
-		<div id="fb-root"></div>		
 		<div class="site-container">
 			<div class="preloader">
 				<canvas class="loading-diamond"></canvas>
+				<img src="https://upacm.github.io/acm-website/img/up_acm_logo.png" class="d-none">
 			</div>
 			<div class="site-content">
 				<nav class="w-100 position-fixed acm-navbar">
@@ -70,11 +70,6 @@
 
 						<div class="d-flex w-100">
 							<div class="diamond-grid m-auto pt-5">
-								<div class = "item"><img src = "./files/img/events-ui/eap.png"></div>
-								<div class = "item"><img src = "./files/img/events-ui/algolympics.png"></div>
-								<div class = "item"><img src = "./files/img/events-ui/scc.png"></div>
-								<div class = "item"><img src = "./files/img/events-ui/haxxor.png"></div>
-								<div class = "item"><img src = "./files/img/events-ui/gamecraft.png"></div>
 							</div>
 						</div>
 					</div>
@@ -117,6 +112,7 @@
 
 	  	<!-- Database -->
 	  	<script src="./files/js/acm-website-db.js"></script>
+	  	<script>loadData("main")</script>
 
 	  	<!-- Loading Screen-->
 	  	<script src="./files/js/diamond-load.js"></script>
