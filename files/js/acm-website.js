@@ -22,6 +22,16 @@ function initializeSite(){
       $( ".acm-navbar .burger i" ).toggleClass( "fa-times" );
    }); 
 
+  $('.acm-footer').on("click", ".footer-event-link", function(e){
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000);
+   }); 
+
+  $('.acm-navbar').on("click", ".nav-contact", function(e){
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: $(document).height() }, 1000);
+   }); 
+
   $( window ).resize(function() {
     $( ".site-container" ).removeClass( "menu-toggle" )
      $( ".acm-navbar .burger i" ).addClass( "fa-bars" );

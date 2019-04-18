@@ -20,6 +20,7 @@
         for (var i = 0; i < json.records.length; i++) {
           if (json.records[i].Configuration == "Title"){
             $(".landing-title").html(json.records[i].Setting);
+
           }
           else if (json.records[i].Configuration == "Subtitle"){
             $(".landing-subtitle").html(json.records[i].Setting);
@@ -102,8 +103,8 @@
            else if (json.records[i].Configuration == "Facebook Access Token"){
             acctoken = json.records[i].Setting;
           }
-          
         }
+
     
         /* Events Sheet */
 
@@ -111,6 +112,7 @@
           select = "events";
           $.getJSON(action_url+"&purpose="+select, function (json2) {
 
+              $(".diamond-grid").fadeOut(1);
               var events_dataHTML = "";
               for (var i = 0; i < json2.records.length; i++) {
                 events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
@@ -124,6 +126,8 @@
                 autoRedraw:true,
                 itemSelector:".item"
               });
+
+              $(".diamond-grid").fadeIn(100);
           });
         }
 
@@ -140,6 +144,8 @@
               $(".fb-script-sm").remove();
           }
         );
+
+         $(".fadestart").addClass("fadedIn");
         
     });
    

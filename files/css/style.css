@@ -5,6 +5,10 @@
     text-rendering: optimizeLegibility;
 	}
 
+	*:focus{
+		outline: none;
+	}
+
 	body{
 		font-size: 1rem;
 	}
@@ -29,6 +33,7 @@
 		background-color: white;
 		border-color: white;
 		color: #0083c0;
+		outline: none;
 	}
 
 	.btn-secondary:hover{
@@ -108,6 +113,15 @@
 		background-color: white;
 	}
 
+	.fadestart{
+		opacity: 0;
+		transition: 0.15s;
+	}
+
+	.fadedIn{
+		opacity: 1;
+	}
+
 	.landing-title{
 		font-size: 3rem;
 		font-weight: bold;
@@ -131,6 +145,7 @@
 		width: 100%;
 		z-index: 4;
 	}
+
 
 	.landing-scroll-down{
 		width: 15rem;
