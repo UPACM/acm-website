@@ -111,9 +111,6 @@
           else if (json.records[i].Configuration == "Contact Us Address"){
             $(".footer-address").html(json.records[i].Setting);
           }
-           else if (json.records[i].Configuration == "Facebook Access Token"){
-            acctoken = json.records[i].Setting;
-          }
         }
 
     
@@ -146,43 +143,25 @@
 
         }
 
-
-
-         
-
         /* FB Data */
-        try{
-          if (SocialOn){
-             FB.api('/upacm', 'GET',
-              {
-                "fields":"posts.limit("+fb_post_limit+"){message,full_picture,permalink_url,created_time,object_id},videos.limit("+fb_post_limit+"){live_status,embed_html,id}",
-                "access_token": acctoken,
-              },
-              function(response) {
-                  acctoken = response;
-                  FBDataCallback(acctoken);
-                  $(".fb-script-sm").remove();
-              }
-            );
-          }
+       
+        if (SocialOn){
+          select = "fbgraph";
+          $.getJSON(action_url+"?purpose="+ select, function(graph) {
+            console.log(graph.fbresponse);
+            FBDataCallback(graph.fbresponse);
+          });
         }
-        catch(err){
-          console.log(err.message);
-        }
-        finally{
-          $(".preloader").fadeOut();
-          $(".fadestart").addClass("fadedIn");
-            setTimeout(function() {
-              $(".fadedIn").removeClass("fadestart");
-               $(".fadedIn").removeClass("fadedIn");
-            }, 10000);
+       
+        $(".preloader").fadeOut();
+        $(".fadestart").addClass("fadedIn");
+        setTimeout(function() {
+          $(".fadedIn").removeClass("fadestart");
+          $(".fadedIn").removeClass("fadedIn");
+        }, 10000);
 
          
-        }
-        
-        
     });
-   
   }
 
 
