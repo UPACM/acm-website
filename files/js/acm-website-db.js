@@ -143,7 +143,7 @@
         }
 
         if (PartnersOn){
-          
+
         }
 
 
@@ -174,7 +174,7 @@
             setTimeout(function() {
               $(".fadedIn").removeClass("fadestart");
                $(".fadedIn").removeClass("fadedIn");
-            }, 1000);
+            }, 10000);
 
         }
         
