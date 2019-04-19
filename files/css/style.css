@@ -469,11 +469,6 @@ a:hover{
 		height: 100%;
 	}
 
-	.soc-media-photon{
-		min-height: 18rem;
-		margin: 0 0 1em 0; 
-	}
-
 	.soc-media-photon .soc-med-fbprev .socmed-prevlink img{
 		max-height: 320px;
 	}
@@ -485,6 +480,12 @@ a:hover{
 
 @media (max-width: 767px)
 {
+
+	.soc-media-photon{
+		min-height: 10rem;
+		margin: 0 0 1em 0; 
+	}
+	
 	.diamond-grid
 	{
 		width:100%;

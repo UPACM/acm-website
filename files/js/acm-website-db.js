@@ -216,7 +216,7 @@
           <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto"> 
             <i class="fas fa-calendar-alt mr-2"></i>` + date.toLocaleString(undefined, dateoptions) + `
           </p>
-          <div class='p-4'>
+          <div class='px-lg-4 py-lg-4 py-3 px-0'>
             ` + GetParagraph(tempmsg,500) + `
           </div>
         </div>
