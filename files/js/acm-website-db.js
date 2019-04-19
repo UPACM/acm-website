@@ -11,6 +11,7 @@
     var EventsOn = false;
     var HeaderMode = "Video";
     var SocialOn = false;
+    var PartnersOn = false;
 
     /* Main Sheet */
     $.getJSON(action_url+"&purpose="+select, function (json) {
@@ -94,6 +95,10 @@
           else if (json.records[i].Configuration == "Show Partners"){
             if (json.records[i].Setting == false){
               $(".partners").remove();
+              PartnersOn = false;
+            }
+            else{
+              PartnersOn = true;
             }
           }
           else if (json.records[i].Configuration == "Contact Us E-mail"){
@@ -137,6 +142,10 @@
           });
         }
 
+        if (PartnersOn){
+          
+        }
+
 
 
          
@@ -162,6 +171,11 @@
         }
         finally{
           $(".fadestart").addClass("fadedIn");
+            setTimeout(function() {
+              $(".fadedIn").removeClass("fadestart");
+               $(".fadedIn").removeClass("fadedIn");
+            }, 1000);
+
         }
         
         

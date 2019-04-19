@@ -276,7 +276,7 @@
 	.socmed-date{
 		background-color: #0083c0;
 	    color: white;
-	    font-family: 'Montserrat';
+	    font-family: 'Montserrat', sans-serif;
 	    padding: 0.5em 2em;
 	    font-size: 0.85rem;
 	    font-weight: 500;
@@ -364,6 +364,10 @@
 
 	.footer-scrollup:active .circle{
 		border-color: white;
+	}
+
+	.contact-us i{
+		width: 25px;
 	}
 
 

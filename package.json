@@ -1,51 +1,31 @@
 {
-    "title": "Creative",
-    "name": "startbootstrap-creative",
-    "version": "5.1.3",
-    "scripts": {
-        "start": "gulp watch"
-    },
-    "description": "Creative is a stylish one page HTML theme for Bootstrap.",
+    "title": "UP ACM Website",
+    "name": "acm-website",
+    "version": "0.4.6",
+    "description": "Website of the ACM - UP Diliman Student Chapter",
     "keywords": [
         "css",
-        "sass",
         "html",
         "responsive",
-        "theme",
-        "template"
+        "theme"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/creative",
+    "homepage": "upacm.net",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-creative/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "upacm.net/issues",
+        "email": "council@upacm.net"
     },
     "license": "MIT",
-    "author": "Start Bootstrap",
+    "author": "UPACM",
     "contributors": [
-        "David Miller (http://davidmiller.io/)"
+        "Menard Ysrael Cruz (http://myx-214.weebly.com/)"
     ],
     "repository": {
         "type": "git",
         "url": "https://github.com/BlackrockDigital/startbootstrap-creative.git"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "5.7.2",
+        "@fortawesome/fontawesome-free": "5.8.1",
         "bootstrap": "4.3.1",
-        "jquery": "3.3.1",
-        "jquery.easing": "^1.4.1",
-        "magnific-popup": "^1.1.0"
-    },
-    "devDependencies": {
-        "browser-sync": "2.26.3",
-        "del": "^3.0.0",
-        "gulp": "4.0.0",
-        "gulp-autoprefixer": "6.0.0",
-        "gulp-clean-css": "4.0.0",
-        "gulp-header": "2.0.7",
-        "gulp-plumber": "^1.2.1",
-        "gulp-rename": "1.4.0",
-        "gulp-sass": "4.0.2",
-        "gulp-uglify": "3.0.1",
-        "merge-stream": "^1.0.1"
+        "jquery": "3.4",
     }
 }
