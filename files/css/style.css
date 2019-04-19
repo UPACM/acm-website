@@ -15,8 +15,14 @@
 
 	a{
 		color: #0083c0;
-		font-weight: 500;
+		transition: 0.15s
 	}
+
+	a:hover{
+		
+	}
+
+
 	.site-container{
 		height: 100vh;
 	}
@@ -82,6 +88,14 @@
 
 	.footer .copyright{
 		background-color: #003f76;
+	}
+
+	.acm-logo{
+		max-height: 48px;
+		transition: 0.15s;
+	}
+	.acm-logo:hover{
+		opacity: 0.9;
 	}
 
 	.social-media-button{
@@ -302,6 +316,62 @@
 		width:100%;
 	}
 
+	.diamond-box-wrap{
+		transition: 0.15s ease-in-out;
+	}
+
+	.partners img{
+		filter: grayscale(1);
+		opacity: 0.75;
+		max-height: 2.5rem;
+	    margin: 1rem 1.5rem;
+	    transition: 0.15s ease-in-out;
+	    cursor: pointer;
+	    width: auto;
+	}
+
+	.footer-scrollup{
+		bottom: 3.25em;
+		right: 2.5em;
+		height: 3.5em;
+		width: 3.5em;
+		background-color: white;
+		z-index: 9;
+		transform:rotate(45deg);
+		border: 3px solid #0083c0;
+		color: #0083c0;
+		transition: 0.15s;
+		cursor: pointer;
+	}
+
+	.footer-scrollup .circle{
+		border-radius: 100%;
+		transform:rotate(-45deg);
+		border: 3px solid #0083c0;
+		height: 2.35em;
+		width: 2.35em;
+	}
+
+	.footer-scrollup:hover{
+		background-color: #efefef;
+	}
+
+	.footer-scrollup:active{
+		background-color: #0083c0;
+		color: white;
+		border: 1px solid white;
+	}
+
+	.footer-scrollup:active .circle{
+		border-color: white;
+	}
+
+
+	.partners img:hover{
+		filter: grayscale(0);
+		opacity: 1;
+	}
+
 	@media screen and (max-width: 992px) {
 
 		h1{
@@ -363,5 +433,12 @@
 			width: 115px !important;
 
 		}
+
+		.partners img{
+			max-height: 2rem;
+		}
 		
+		.acm-logo{
+			max-height: 40px;
+		}
 	}

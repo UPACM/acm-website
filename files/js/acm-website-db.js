@@ -10,6 +10,7 @@
     var action_url = script_url+"?action=read";
     var EventsOn = false;
     var HeaderMode = "Video";
+    var SocialOn = false;
 
     /* Main Sheet */
     $.getJSON(action_url+"&purpose="+select, function (json) {
@@ -81,18 +82,23 @@
                 $(".events-description").html(json.records[i].Setting);
               }
           }
-          else if (json.records[i].Configuration == "Show Facebook"){
+          else if (json.records[i].Configuration == "Show Facebook Social News"){
             if (json.records[i].Setting == false){
-              $(".soc-fb").remove();
+              $(".social").remove();
+              SocialOn = false;
+            }
+            else{
+              SocialOn = true;
             }
           }
-           else if (json.records[i].Configuration == "Show Twitter"){
+          else if (json.records[i].Configuration == "Show Partners"){
             if (json.records[i].Setting == false){
-              $(".soc-twitter").remove();
+              $(".partners").remove();
             }
           }
           else if (json.records[i].Configuration == "Contact Us E-mail"){
             $(".footer-mail").html(json.records[i].Setting);
+            $(".footer-mail").attr("href", "mailto:"+json.records[i].Setting);
           }
           else if (json.records[i].Configuration == "Contact Us Mobile"){
             $(".footer-mobile").html(json.records[i].Setting);
@@ -131,21 +137,33 @@
           });
         }
 
+
+
+         
+
         /* FB Data */
-
-        FB.api('/upacm', 'GET',
-          {
-            "fields":"posts.limit("+fb_post_limit+"){message,full_picture,permalink_url,created_time,object_id},videos.limit("+fb_post_limit+"){live_status,embed_html,id}",
-            "access_token": acctoken,
-          },
-          function(response) {
-              acctoken = response;
-              FBDataCallback(acctoken);
-              $(".fb-script-sm").remove();
+        try{
+          if (SocialOn){
+             FB.api('/upacm', 'GET',
+              {
+                "fields":"posts.limit("+fb_post_limit+"){message,full_picture,permalink_url,created_time,object_id},videos.limit("+fb_post_limit+"){live_status,embed_html,id}",
+                "access_token": acctoken,
+              },
+              function(response) {
+                  acctoken = response;
+                  FBDataCallback(acctoken);
+                  $(".fb-script-sm").remove();
+              }
+            );
           }
-        );
-
-         $(".fadestart").addClass("fadedIn");
+        }
+        catch(err){
+          console.log(err.message);
+        }
+        finally{
+          $(".fadestart").addClass("fadedIn");
+        }
+        
         
     });
    

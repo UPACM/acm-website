@@ -1,5 +1,7 @@
 /* ACM Website Main JS */
 
+const scrollTime = 1000;
+
 function initializeSite(){
 	
 	/* Load Header and Footer Partials */
@@ -13,7 +15,7 @@ function initializeSite(){
 
  $('.landing-scroll-down').on( "click", function(){
       var y = $(window).scrollTop();
-      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000);
+      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, scrollTime);
    }); 
 
   $('.acm-navbar').on("click", ".burger", function(){
@@ -24,12 +26,21 @@ function initializeSite(){
 
   $('.acm-footer').on("click", ".footer-event-link", function(e){
       e.preventDefault();
-      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, 1000);
+      $('html, body').animate({ scrollTop: $(".header").outerHeight() }, scrollTime);
+   }); 
+
+  $('.acm-footer').on("click", ".partners-event-link", function(e){
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: $(".partners").offset().top }, scrollTime);
    }); 
 
   $('.acm-navbar').on("click", ".nav-contact", function(e){
       e.preventDefault();
-      $('html, body').animate({ scrollTop: $(document).height() }, 1000);
+      $('html, body').animate({ scrollTop: $(document).height() }, scrollTime);
+   }); 
+
+  $('.acm-footer').on("click", ".footer-scrollup", function(e){
+      $('html, body').animate({ scrollTop: 0 }, scrollTime);
    }); 
 
   $( window ).resize(function() {
