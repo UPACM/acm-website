@@ -21,11 +21,11 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-creative.git"
+        "url": "https://github.com/UPACM/acm-website.git"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.8.1",
         "bootstrap": "4.3.1",
-        "jquery": "3.4",
+        "jquery": "3.4.0",
     }
 }
