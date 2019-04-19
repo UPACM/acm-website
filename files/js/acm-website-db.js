@@ -1,5 +1,5 @@
  
-  var script_url = "https://script.google.com/macros/s/AKfycbz1b4YCWoYMxOol0cIuX_X0DOd0YS3zZTkzTg_q_b2Ik3nKZvY/exec";
+  var script_url = "https://script.google.com/macros/s/AKfycbxm-Z6rvQ2JkF6syh0_nlmk30wKrJxgluaAP3ch/exec";
 
   var loadingdone = 0;
   var acctoken = "";
