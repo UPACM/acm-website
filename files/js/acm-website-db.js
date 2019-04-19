@@ -170,13 +170,14 @@
           console.log(err.message);
         }
         finally{
+          $(".preloader").fadeOut();
           $(".fadestart").addClass("fadedIn");
             setTimeout(function() {
               $(".fadedIn").removeClass("fadestart");
                $(".fadedIn").removeClass("fadedIn");
             }, 10000);
 
-          $(".preloader").fadeOut();
+         
         }
         
         
