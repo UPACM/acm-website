@@ -276,7 +276,7 @@
     while( (currentcount <= charcount) && tempmesg[currentindex] != null ){
       currentcount = currentcount + tempmesg[currentindex].length;
       the_html =  tempmesg[currentindex].replace(urlRegex, function(url) { return '<a href="' + url + '">' + url + '</a>';});
-      the_html = the_html.replace(hashtagRegEx, function(tag){ return '<span style="color:' + tagcolor + '">' + tag + '</span>' });
+      the_html = the_html.replace(hashtagRegEx, function(tag){ return '<span class="font-weight-bold" style="color:' + tagcolor + '">' + tag + '</span>' });
       result = result + "<p>" + the_html + "</p>";
       currentindex = currentindex+1;
     }
