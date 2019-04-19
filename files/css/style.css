@@ -420,6 +420,10 @@
 		.soc-media-photon .soc-med-fbprev .socmed-prevlink img{
 			max-height: 320px;
 		}
+
+		.diamond-grid .item{
+			opacity: 1;
+		}
 	}
 
 	@media (max-width: 767px)
