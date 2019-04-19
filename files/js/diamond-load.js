@@ -83,10 +83,10 @@
       percent = 0;
     }
 
-    context.font = "16px Montserrat";
+    context.font = "16px 'Myriad Pro'";
     context.textAlign = "center";
 
-    context.fillText("LOADING...", window.innerWidth/2, window.innerHeight/2 +8);
+    context.fillText("Loading...", window.innerWidth/2, window.innerHeight/2 +8);
 
 
     requestAnimationFrame(animateDiamond);

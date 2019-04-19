@@ -176,6 +176,7 @@
                $(".fadedIn").removeClass("fadedIn");
             }, 10000);
 
+          $(".preloader").fadeOut();
         }
         
         
