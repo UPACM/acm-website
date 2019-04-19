@@ -213,12 +213,12 @@ a:hover{
 }
 
 .landing-scroll-down i{
-	transition: 0.15s ease-in-out;
 	position: relative;
 	top:0;
 }
 
 .landing-scroll-down:active i{
+	transition: 0.15s ease-in-out;
 	top: 0.25rem;
 }
 
