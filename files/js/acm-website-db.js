@@ -147,7 +147,7 @@
        
         if (SocialOn){
           select = "fbgraph";
-          $.getJSON(action_url+"?purpose="+ select, function(graph) {
+          $.getJSON(action_url+"&purpose="+ select, function(graph) {
             console.log(graph.fbresponse);
             FBDataCallback(graph.fbresponse);
           });
