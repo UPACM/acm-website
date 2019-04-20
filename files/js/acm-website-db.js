@@ -107,7 +107,6 @@
             $(".footer-address").html(json.records[i].Setting);
           }
         }
-
     
         /* Events Sheet */
 
