@@ -1,20 +1,15 @@
  
-  var script_url = "https://script.google.com/macros/s/AKfycbxm-Z6rvQ2JkF6syh0_nlmk30wKrJxgluaAP3ch/exec";
-
-  var loadingdone = 0;
-  var acctoken = "";
-  const fb_post_limit = 10;
+  const script = "https://script.google.com/macros/s/AKfycbz1b4YCWoYMxOol0cIuX_X0DOd0YS3zZTkzTg_q_b2Ik3nKZvY/exec";
 
   function loadData(select){
 
-    var action_url = script_url+"?action=read";
-    var EventsOn = false;
+    let EventsOn = false;
     var HeaderMode = "Video";
-    var SocialOn = false;
-    var PartnersOn = false;
+    let SocialOn = false;
+    let PartnersOn = false;
 
     /* Main Sheet */
-    $.getJSON(action_url+"&purpose="+select, function (json) {
+    $.getJSON(script, {action: "read", purpose: select }, function (json) {
 
     // Set the variables from the results array
          
@@ -118,7 +113,7 @@
 
         if (EventsOn){
           select = "events";
-          $.getJSON(action_url+"&purpose="+select, function (json2) {
+          $.getJSON(script, {action: "read", purpose: select }, function (json2) {
 
               $(".diamond-grid").fadeOut(1);
               var events_dataHTML = "";
@@ -147,17 +142,16 @@
        
         if (SocialOn){
           select = "fbgraph";
-          $.getJSON(action_url+"&purpose="+ select, function(graph) {
-            console.log(graph.fbresponse);
-            FBDataCallback(graph.fbresponse);
+          $.getJSON(script, {action: "read", purpose: select }, function(graph) {
+            FBDataCallback(graph.fbresponse, graph.fbconfig);
           });
         }
        
         $(".preloader").fadeOut();
         $(".fadestart").addClass("fadedIn");
         setTimeout(function() {
-          $(".fadedIn").removeClass("fadestart");
-          $(".fadedIn").removeClass("fadedIn");
+        $(".fadedIn").removeClass("fadestart");
+        $(".fadedIn").removeClass("fadedIn");
         }, 10000);
 
          
@@ -165,11 +159,11 @@
   }
 
 
-  function FBDataCallback(callback){
+  function FBDataCallback(callback, config){
     //console.log(callback);
-    var message ="";
+    let message = "";
     var tempmsg, imagepic, link, date;
-    var dateoptions = { 
+    let dateoptions = { 
       month: 'long', 
       day: 'numeric', 
       year: 'numeric', 
@@ -177,26 +171,25 @@
       minute: '2-digit',
       hour12: true
     };
+    var post;
 
-    const fb_post_limit_displayed = 4;
-
-    for (var i = 0; i < fb_post_limit_displayed; i++){
-      tempmsg = callback.posts.data[String(i)].message.replace(/\n/g, '<br>');
-      link = callback.posts.data[String(i)].permalink_url;
-      date = new Date(callback.posts.data[String(i)].created_time);
-      imagepic = '<img src="' + callback.posts.data[String(i)].full_picture + '" class="img-fluid">';
+    for (var i = 0; i < config.post_limit; i++){
+      post = callback.posts.data[String(i)];
+      link = post.permalink_url;
+      date = new Date(post.created_time);
+      imagepic = '<img src="' + post.full_picture + '" class="img-fluid">';
       imagelink = FBPreviewHover(imagepic, link);
       message = message +  `<hr>
       <div class='row m-0'>
         <div class='col-lg-3 col-md-4 soc-media-photon d-flex flex-column'>
-          ` + AddFBVids(imagelink, callback.posts.data[String(i)].object_id, callback.videos.data) +   `
+          ` + AddFBVids(imagelink, post.object_id, callback.videos.data, config.preview) +   `
         </div>
         <div class='col-lg-9 col-md-8 d-flex flex-column'>
           <p class="mb-3 socmed-date ml-auto mr-lg-0 mr-auto"> 
             <i class="fas fa-calendar-alt mr-2"></i>` + date.toLocaleString(undefined, dateoptions) + `
           </p>
           <div class='px-lg-4 py-lg-4 py-3 px-0'>
-            ` + GetParagraph(tempmsg,500) + `
+            ` + GetParagraph(post.message,500) + `
           </div>
         </div>
       </div>`;
@@ -206,8 +199,7 @@
     $(".soc-fb").html(message);
   }
 
-  function AddFBVids(imagestring, obj_id, video_array){
-
+  function AddFBVids(imagestring, obj_id, video_array, image_config){
 
     let is_video = false;
     let counter = 0;
@@ -215,19 +207,21 @@
     let is_live = false;
     let result = "";
 
-    while(counter < video_array.length){
 
-      if(obj_id == video_array[counter].id ){
-        video_html = video_array[counter].embed_html;
-        is_video = true;
-        if (video_array[counter].live_status == "LIVE"){
-          is_live = true;
+    if (image_config == "Video"){
+      while(counter < video_array.length){
+
+        if(obj_id == video_array[counter].id ){
+          video_html = video_array[counter].embed_html;
+          is_video = true;
+          if (video_array[counter].live_status == "LIVE"){
+            is_live = true;
+          }
+          break;
         }
 
-        break;
+        counter = counter + 1;
       }
-
-      counter = counter + 1;
     }
 
     if(is_video == true){
@@ -243,7 +237,7 @@
 
   function GetParagraph(msg, charcount){
 
-    let tempmesg = msg.split("<br>");
+    let tempmesg = msg.split("\n");
     let result = "";
     let currentcount = 0;
     let currentindex = 0;
