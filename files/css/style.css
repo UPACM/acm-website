@@ -138,11 +138,35 @@ a:hover{
 }
 
 .acm-logo{
-	max-height: 48px;
+	opacity: 1;
 	transition: 0.15s;
 }
 .acm-logo:hover{
 	opacity: 0.9;
+}
+
+.acm-logo img{
+	max-height: 48px;
+	pointer-events: none;
+}
+
+.not-found{
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+.not-found div{
+	margin: auto;
+	text-align: center;
+}
+
+.not-found div img{
+	max-width: 220px;
+}
+
+.not-found div p{
+	margin-top: 2em;
 }
 
 .social-media-button{
@@ -371,6 +395,7 @@ a:hover{
 	left: 0;
 	transform:translateY(-50%);
 	width:100%;
+	pointer-events: none;
 }
 
 .diamond-box-wrap{
@@ -504,7 +529,7 @@ a:hover{
 		max-height: 2rem;
 	}
 	
-	.acm-logo{
+	.acm-logo img{
 		max-height: 40px;
 	}
 }
