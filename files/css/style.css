@@ -146,7 +146,7 @@ a:hover{
 }
 
 .acm-logo img{
-	max-height: 48px;
+	max-height: 44px;
 	pointer-events: none;
 }
 
@@ -192,6 +192,7 @@ a:hover{
 .acm-navbar{
 	z-index: 10000;
 	top: 0;	
+	min-height: 76px;
 }
 
 .acm-navbar .bg{
@@ -222,7 +223,7 @@ a:hover{
 	overflow: hidden;
 	height: 500px;
 	/*height: 90vh;*/
-	margin-top: 79px;
+	margin-top: 76px;
 }
 
 .header-bg{
@@ -528,8 +529,17 @@ a:hover{
 	.partners img{
 		max-height: 2rem;
 	}
-	
+
 	.acm-logo img{
 		max-height: 40px;
 	}
+	
+}
+
+
+@media only screen and (min-width: 2560px) and (max-width: 4000px)  {
+    .container-fluid, .container{
+    	max-width: 1440px !important;
+    }
+
 }
