@@ -134,7 +134,26 @@
         }
 
         if (PartnersOn){
+          select = "partners";
+          $.getJSON(script, {action: "read", purpose: select }, function (json2) {
 
+              $(".diamond-grid").fadeOut(1);
+              var events_dataHTML = "";
+              for (var i = 0; i < json2.records.length; i++) {
+                events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
+              }                
+              $(".events .diamond-grid").html(events_dataHTML);
+
+              $(".diamond-grid").diamonds({
+                size:200,
+                gap:5,
+                hideIncompleteRow:false,
+                autoRedraw:true,
+                itemSelector:".item"
+              });
+
+              $(".diamond-grid").fadeIn(100);
+          });
         }
 
         /* FB Data */
