@@ -118,7 +118,7 @@
               var events_dataHTML = "";
               for (var i = 0; i < json2.records.length; i++) {
                 if (json2.records[i].Show_Event == true)
-                  events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
+                  events_dataHTML = events_dataHTML + '<a href = "' + json2.records[i].Site_Page_(Github) +'"><div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div></a>'
               }                
               $(".events .diamond-grid").html(events_dataHTML);
 
