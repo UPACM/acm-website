@@ -117,7 +117,8 @@
               $(".diamond-grid").fadeOut(1);
               var events_dataHTML = "";
               for (var i = 0; i < json2.records.length; i++) {
-                events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
+                if (json2.records[i].Show_Event)
+                  events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
               }                
               $(".events .diamond-grid").html(events_dataHTML);
 
