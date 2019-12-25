@@ -142,7 +142,7 @@
               for (var i = 0; i < json2.records.length; i++) {
                 events_dataHTML = events_dataHTML + '<div class = "item"><img src = "' + json2.records[i].Image_URL + '"></div>'
               }                
-              $(".events .diamond-grid").html(events_dataHTML);
+              $(".partners .diamond-grid").html(events_dataHTML);
 
               $(".diamond-grid").diamonds({
                 size:200,
